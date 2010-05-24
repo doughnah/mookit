@@ -1,13 +1,22 @@
+/*
+---
 
+script: Swiff.js
 
-/**************************************************************
+description: An extension to the core Swiff that provides a version.
 
-	Script		: Swiff
-	Version		: 1.0
-	Authors		: Samuel Birch
-	Desc		: Adds version checking to the Swiff class
+license: MIT-style license
 
-**************************************************************/
+authors:
+- Samuel Birch
+
+requires:
+- core:1.2.4/Swiff
+
+provides: [Swiff]
+
+...
+*/
 
 Swiff = new Class({
 
