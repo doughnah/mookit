@@ -25,7 +25,7 @@ var PagePreLoader = new Class({
 	options: {
 		css: '/_common/css/loading.css',
 		delay: 0,
-		fade: true,
+		fade: false,
 		typekitId: null
 	},
 
@@ -38,7 +38,7 @@ var PagePreLoader = new Class({
 			this.add('typekit');
 			this.loadFonts();
 		}
-		this.add('domready');
+		this.add('loaded');
 	},
 	
 	add: function(id){

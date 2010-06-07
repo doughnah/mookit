@@ -22,7 +22,7 @@ The *PagePreLoader* class hides the page content until its ready to show. It als
 
 * css     		- (*string*: defaults to 'css/loading.css') The location of the css file that get added to the page while the content is loading.
 * delay        	- (*integer*: defaults to 0) The seconds to delay before showing the content. This take into account the time it take to load fonts.
-* fade     		- (*boolean*: defaults to true) If set to true, fades in the content when ready.
+* fade     		- (*boolean*: defaults to false) If set to true, fades in the content when ready.
 * typekitId     - (*string*: defaults to null) You kit's typekit id.
 
 ### Returns:
@@ -35,7 +35,7 @@ The *PagePreLoader* class hides the page content until its ready to show. It als
 	var myLoader = new PagePreLoader({typekitId:'xxxxxx'});
 	
 	window.addEvent('domready', function(){
-		myLoader.update('domready');
+		myLoader.update('loaded');
 	});
 
 ### Demos:
