@@ -23,7 +23,7 @@ var PagePreLoader = new Class({
 	Implements: Options,
 	
 	options: {
-		css: 'css/loading.css',
+		css: '/_common/css/loading.css',
 		delay: 0,
 		fade: true,
 		typekitId: null
