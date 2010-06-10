@@ -13,6 +13,7 @@ authors:
 
 requires:
 - core:1.2.4
+- /Native/Date.Extras
 
 provides: [Calendar]
 
@@ -25,8 +26,7 @@ var Calendar = new Class({
 
     Implements: [Options, Events],
 
-    getOptions: function() {
-        return {
+    options: {
             classname: 'calendar',
             format: 'yyyy/mm/dd', //  dd/mm/yyyy  yyyy/mm/dd  dd-mm-yyyy  yyyy-mm-dd  dd/mm/yy  dd-mm-yy  mm/dd/yyyy  mm-dd-yyyy
             range: null, // [min, max]
@@ -42,12 +42,12 @@ var Calendar = new Class({
             position: 'right',
             multiSelect: false,
             selectDayType: false,
-            selectRange: false
-        };
+            selectRange: false,
+            hideInput: true
     },
 
     initialize: function(options) {
-        this.setOptions(this.getOptions(), options);
+        this.setOptions(options);
         
         this.container = new Element('div', { 'class': this.options.classname + 'Container' });
 
@@ -66,7 +66,7 @@ var Calendar = new Class({
 
         this.input = $(this.options.input);
 
-        if (this.input) {
+        if (this.input && this.options.hideInput) {
         	this.newInput = new Element('input', {type: 'hidden'});
         	this.newInput.set('value', this.input.get('value'));
         	this.newInput.set('name', this.input.get('name'));
@@ -76,7 +76,7 @@ var Calendar = new Class({
         	this.input = this.newInput;
         }
         if(this.options.container){
-        	this.container.inject($(this.options.container));
+        	this.container.inject($(this.options.container) || document.body);
     	}
 
         this.today = new Date();

@@ -41,6 +41,7 @@ Calendar Method: constructor {#Calendar:constructor}
 * multiSelect - (*boolean*: defaults to false)
 * selectDayType - (*boolean*: defaults to false)
 * selectRange - (*boolean*: defaults to false)
+* hideInput - (*boolean*: defaults to true) If true, this will turn the input into a hidden input field
 
 ### Returns:
 
