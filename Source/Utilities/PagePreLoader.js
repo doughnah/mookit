@@ -74,10 +74,15 @@ var PagePreLoader = new Class({
 		if(this.options.fade && !Browser.Engine.trident){
 			$(document.body).fade('hide');
 		}
+		//if IE7 then set the href to blank because destroy doesn't seem to work!
+		if(Browser.Engine.trident5){
+			this.css.href = '';
+		}
 		this.css.destroy();
 		if(this.options.fade && !Browser.Engine.trident){
 			$(document.body).fade('in');
 		}
+		
 		$(document.body).focus();
 	},
 	
