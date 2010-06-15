@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : javascript</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		new Request.JSON({url:'../scripts.json', onComplete:function(data){
+
+			for(var el in data){
+				var item = new Element('h3', {'text': el}).inject($('menu'));
+				var list = new Element('dl').inject($('menu'));
+				
+				for(var e in data[el]){
+					if (e != 'desc') {
+						var item = new Element('dt').inject(list);
+						var a = data[el][e].demo.replace('_demos/','');
+						if(a){
+							new Element('a', {
+								'href': a,
+								'html': e
+							}).inject(item);
+						}else{
+							item.set('html', e);
+						}
+						new Element('dd', {'text': data[el][e].desc}).inject(list);
+					}
+				}
+				new Element('div', {'class': 'clear'}).inject($('menu'));
+			}
+			
+		}}).get();
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<div id="menu">
+			
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

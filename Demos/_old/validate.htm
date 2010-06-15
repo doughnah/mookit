@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : validate</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css" media="screen">
+	form p {
+		margin-bottom: 5px;
+		clear: both;
+	}
+	form label {
+		float: left;
+		width: 100px;
+	}
+	form .errorMessage {
+		padding-left: 10px;
+		color: red;
+	}
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/date-en-gb.js"></script>
+<script type="text/javascript" src="../interface/validate.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var val = new validate($('basicForm'));
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>validate</h2>
+		<a class="view" href="../_docs/validate.htm">view docs</a><p class="version">version 2.2</p>
+		<p class="description">form validation.</p>
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>validate on onBlur events.</li>
+				<li>inline error display.</li>
+				<li>display error list onSubmit.</li>
+				<li>validates: empty value, number, email, date, uk postcode.</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<form id="basicForm" action="validate.asp" method="post">
+				<p><label for="name">name:</label><input type="text" name="name" value="" title="Please enter your name" class="required" /></p>
+				<p><label for="email">email:</label><input type="text" name="email" value="" title="Please enter a valid email" class="required email" /></p>
+				<p><label for="dob">dob:</label><input type="text" name="dob" value="" title="Please enter a valid date" class="required date" /> (dd/mm/yy)</p>
+				<input type="submit" value="submit" />
+			</form>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

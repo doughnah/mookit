@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : imageMenu</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>imageMenu</h2>
+		<p class="version">version 2.3</p>
+		<p class="description">horizontal menu, reveals more of the image as you rollover it.</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>new ImageMenu(elements [, options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>elements - (array)</li>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>openWidth</dt>
+			<dd>width in px of the items when rolled over. default: 200</dd>
+			<dt>transition</dt>
+			<dd>default: Fx.Transitions.Quad.easeOut</dd>
+			<dt>duration</dt>
+			<dd>the length of the transition. default: 400</dd>
+			<dt>open</dt>
+			<dd>the id or index of the item to open on start. default: null</dd>
+			<dt>border</dt>
+			<dd>a px value to tweak the widths when an item is open. default: 0</dd>
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>OnOpen</dt>
+			<dd>a function to execute when an item opens (mouseover). If there is an href within the li then that is passed to the function.</dd>
+			<dt>OnClose</dt>
+			<dd>same as above but when closed. (mouseout)</dd>
+			<dt>OnClickOpen</dt>
+			<dd>a function to execute when an item is clicked open. If there is an href within the li then that is passed to the function.</dd>
+			<dt>OnClickClose</dt>
+			<dd>same as above but when clicked closed.</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new imageMenu instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/imageMenu.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var myMenu = new ImageMenu($$('#imageMenu a'), {
+	openWidth:310, 
+	border:2
+});</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+				<li>mootools v1.2 more - fx.elements</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

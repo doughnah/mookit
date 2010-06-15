@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : multiBox</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>multiBox</h2>
+		<p class="version">version 1.3.2</p>
+		<p class="description">lightbox that supports jpg, gif, png, flash, flv, mov, wmv, mp3, html, iframe</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var box = new multiBox(className [, options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>className - (string)</li>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>initialWidth</dt>
+			<dd>(number) the width of the box when it first opens while loading the item. Default: 250</dd>
+			
+			<dt>initialHeight</dt>
+			<dd>(number) the width of the box when it first opens while loading the item. Default: 250</dd>
+			
+			<dt>container</dt>
+			<dd>(element) the element that the box will take it coordinates from. Default: document.body</dd>
+			
+			<dt>contentColor</dt>
+			<dd>(string) the color of the content area inside the box. Default: #FFF</dd>
+			
+			<dt>showNumbers</dt>
+			<dd>(boolean) show the number of the item e.g. 2/10. Default: true</dd>
+			
+			<dt>showControls</dt>
+			<dd>(boolean) show the navigation controls. Default: true</dd>
+			
+			<dt>descClassName</dt>
+			<dd>(string) the classname of the divs that contain the description for the item. Default: false</dd>
+			
+			<dt>descMinWidth</dt>
+			<dd>(number) the min width of the description text, useful when the item is small. Default: 400</dd>
+			
+			<dt>descMaxWidth</dt>
+			<dd>(number) the max width of the description text, so it can wrap to multiple lines instead of being on a long single line. Useful when the item is large. Default: 600 </dd>
+			
+			<dt>movieWidth</dt>
+			<dd>(number) the default width of the box that contains content of a movie type. Default: 400</dd>
+			
+			<dt>movieHeight</dt>
+			<dd>(number) the default height of the box that contains content of a movie type. Default: 300</dd>
+			
+			<dt>offset</dt>
+			<dd>(object) containing x & y coords that adjust the positioning of the box. Default: {x:0, y:0}</dd>
+			
+			<dt>fixedTop</dt>
+			<dd>(number) gives the box a fixed top position relative to the container. Default: false</dd>
+			
+			<dt>path</dt>
+			<dd>(string) location of the resources files, e.g. flv player, etc. Default: 'files/'</dd>
+			
+			<dt>openFromLink</dt>
+			<dd>(boolean) opens the box relative to the link location. Default: true</dd>
+			
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>onOpen</dt>
+			<dd>function to call when the box opens.</dd>
+			
+			<dt>onClose</dt>
+			<dd>function to call when the box closes.</dd>
+		</dl>
+		
+		<h3>methods:</h3>
+		<dl>
+			<dt>create</dt>
+			<dd><h4>arguments:</h4>
+					<ol>
+						<li>path - (string) location of the media item</li>
+						<li>options - (object, optional)</li>
+					</ol>
+					<h4>options:</h4>
+					<dl>
+						<dt>title</dt>
+						<dd>(string)</dd>
+						<dt>description</dt>
+						<dd>(string)</dd>
+						<dt>width</dt>
+						<dd>(number) the width of the box. (not used for images)</dd>
+						<dt>height</dt>
+						<dd>(number) the height of the box. (not used for images)</dd>
+						<dt>type</dt>
+						<dd>(number) force the media type, e.g. image or html</dd>
+						<dt>ajax</dt>
+						<dd>load the html content in via ajax.</dd>
+					</dl>
+			</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new multiBox instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/multibox.htm">view demo</a>example:</h3>
+		<h4>HTML</h4>
+		<pre><code>
+&lt;a href="myimage.jpg" class="mb"&gt;view my image&lt;/a&gt;
+		</code></pre>
+		<h4>JavaScript</h4>
+		<pre><code>
+var overlay = new overlay();
+var box = new multiBox('mb', {
+	descClassName: 'mbDesc', 
+	overlay: overlay
+});
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

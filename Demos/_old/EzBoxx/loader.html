@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Untitled Document</title>
+		<script type='text/javascript' src='../mootools-1.2-core-nc.js'></script>
+		<script type='text/javascript' src='../utils.js'></script>
+		<script type='text/javascript'>
+			var loader = {};
+			window.addEvent('domready', function(){
+				loaders = new Loaders();
+			});
+		</script>
+	</head>
+	<body>
+		<div style='width:200px; margin: auto; height: 200px;'>
+		<div id='box' style='border: 1px solid red; width: 100px; height:100px; padding: 10px'>
+			my content goes here...<br/>
+			<a href='#'>link</a>
+			<select><option>bob</option></select>
+		</div>
+		</div>
+		<div style='width:200px; margin: auto; height: 200px;'>
+		<div id='box2' style='border: 1px solid red; width: 100px; height:100px; padding: 10px'>
+			my content goes here...<br/>
+			<a href='#'>link</a>
+			<select><option>bob</option></select>
+		</div>
+		</div>
+		<p>
+			<a href='#' onclick="loaders.show($('box'),{useIframe:true});">show()</a><br/>
+			<a href='#' onclick="loaders.hide($('box'));">hide()</a>
+		</p>
+		<p>
+			<a href='#' onclick="loaders.show($('box2'));">show 2()</a><br/>
+			<a href='#' onclick="loaders.hide($('box2'));">hide 2()</a>
+		</p>
+	</body>
+</html>

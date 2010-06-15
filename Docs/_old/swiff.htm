@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Swiff</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Swiff</h2>
+		<p class="version">version 1.0</p>
+		<p class="description">Creates and returns a Flash object with version checking.</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var mySwiff = new Swiff(path [, options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>path - (string) - the location of the swf file.</li>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>id</dt>
+			<dd>(string)</dd>
+			
+			<dt>width</dt>
+			<dd>(number)</dd>
+			
+			<dt>height</dt>
+			<dd>(number)</dd>
+			
+			<dt>container</dt>
+			<dd>(element) the container into which the swf object will be injected.</dd>
+			
+			<dt>params</dt>
+			<dd>(object) {allowScriptAccess:'always', quality:'high', swLiveConnect:true, wMode:'transparent'}</dd>
+			
+			<dt>properties</dt>
+			<dd>(object) additional attributes for the object element.</dd>
+			
+			<dt>vars</dt>
+			<dd>(object) vars will be passed to the swf as a querystring in flashvars.</dd>
+			
+			<dt>version</dt>
+			<dd>(number) the min version number of the flash plugin. Default: 8</dd>
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>Functions to call from the swf.</dt>
+			<dd>These will be available globally in the movie, and bound to the object.</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new HTML object element.</li>
+		</ul>
+		
+		<h3><a href="../_demos/swiff.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var obj = new Swiff('myMovie.swf', {
+    id: 'myBeautifulMovie'
+    width: 500,
+    height: 400,
+    params: {
+        wmode: 'opaque',
+        bgcolor: '#ff3300'
+    },
+    vars: {
+        myVariable: myJsVar,
+        myVariableString: 'hello'
+    },
+    events: {
+        load: myOnloadFunc
+    }
+});
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

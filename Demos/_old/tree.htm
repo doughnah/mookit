@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : tree</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<link rel="stylesheet" href="../_css/tree.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../interface/tree.js"></script>
+
+<script type="text/javascript">
+	var myTree = {};
+
+	window.addEvent('domready', function(){
+		new tree('basicTree');
+		
+		myTree = new tree('advancedTree', {
+			open: 'a3',
+			_onClick: function(element, status){
+				$('log').set('html', 'The tree item: {element} is now {status}'.substitute({
+					element: element.id,
+					status: status
+				}))
+			}
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>tree</h2>
+		<a class="view" href="../_docs/tree.htm">view docs</a><p class="version">version 2.0</p>
+		<p class="description">open & close nested lists.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>open a nested item by default.</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<ul id="basicTree" class="tree">
+			  	<li id="b1"><span>Parent Node A</span>
+					<ul>
+						<li id="b2"><span>Child Node A1</span>
+							<ul>
+								<li id="b3">Grandchild Node A1a</li>
+								<li id="b4">Grandchild Node A1b</li>
+							</ul>
+						</li>
+						<li id="b5">Child Node A2</li>
+						<li id="b6">Child Node A3</li>
+					</ul>
+				</li>
+				<li id="b7"><span>Parent Node B</span>
+					<ul>
+						<li id="b8">Child Node B1</li>
+						<li id="b9">Child Node B2</li>
+						<li id="b10">Child Node B3</li>
+					</ul>
+				</li>
+				<li id="b11"><span>Parent Node C</span>
+					<ul>
+						<li id="b12">Child Node C1</li>
+						<li id="b13">Child Node C2</li>
+						<li id="b14">Child Node C3</li>
+					</ul>
+				</li>
+			 </ul>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<ul id="advancedTree" class="tree">
+			  	<li id="a1"><span>Parent Node A</span>
+					<ul>
+						<li id="a2"><span>Child Node A1</span>
+							<ul>
+								<li id="a3">Grandchild Node A1a</li>
+								<li id="a4">Grandchild Node A1b</li>
+							</ul>
+						</li>
+						<li id="a5">Child Node A2</li>
+						<li id="a6">Child Node A3</li>
+					</ul>
+				</li>
+				<li id="a7"><span>Parent Node B</span>
+					<ul>
+						<li id="a8">Child Node B1</li>
+						<li id="a9">Child Node B2</li>
+						<li id="a10">Child Node B3</li>
+					</ul>
+				</li>
+				<li id="a11"><span>Parent Node C</span>
+					<ul>
+						<li id="a12">Child Node C1</li>
+						<li id="a13">Child Node C2</li>
+						<li id="a14">Child Node C3</li>
+					</ul>
+				</li>
+			 </ul>
+			<br/><br/>
+			<div id="log"></div>
+			<br/><br/>
+			<a href="javascript:;" onclick="myTree.toggle('a7')">toggle parent node b</a>
+		</div>
+		
+		
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

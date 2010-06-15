@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Fx.Bezier</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../Fx/Fx.Bezier.js"></script>
+<style type="text/css" media="screen">
+	#box1, #box2 {
+		border: 1px solid #454545;
+		background-color: #CAC9B9;
+		width: 40px;
+		height: 40px;
+		float: left;
+		padding: 5px;
+	}
+	.spacer {
+		height: 50px;
+		float: left;
+	}
+</style>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var basic = new Fx.Bezier($('box1'), {
+			duration: 1500, 
+			transition: Fx.Transitions.Sine.easeInOut, 
+			styles: {x:'margin-left', y:'margin-top'},
+			controls: [{x:360,y:-300}]
+		})
+		
+		$('box1').addEvent('click', function(){
+				basic.start({'margin-top': [0,0], 'margin-left': [0,548]});
+		});
+		
+		
+		var advanced = new Fx.Bezier($('box2'), {
+			duration: 1500, 
+			transition: Fx.Transitions.Sine.easeInOut, 
+			styles: {x:'margin-left', y:'margin-top'},
+			controls: [{x:150,y:-300}, {x:350,y:300}]
+		})
+		
+		$('box2').addEvent('click', function(){
+				advanced.start({'margin-top': [0,0], 'margin-left': [0,548]});
+		});
+	
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Fx.Bezier</h2>
+		<a class="view" href="../_docs/fx.bezier.htm">view docs</a><p class="version">version 1.0</p>
+		<p class="description">bezier transition</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>up to 3 control points</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<div class="spacer"></div>
+			<div id="box1">CLICK ME</div>
+			<div class="clear"></div>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<div class="spacer"></div>
+			<div id="box2">CLICK ME</div>
+			<div class="clear"></div>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

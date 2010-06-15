@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : slideShow</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>slideShow</h2>
+		<p class="version">version 1.4</p>
+		<p class="description">transitions between images</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var show = new slideShow(container, images [, options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>container - (mixed, element or string)</li>
+			<li>images - (mixed, string or array) The string should be the classname on the a tags, the array should contain objects with the properties: path, title, description, url</li>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>effect</dt>
+			<dd>(string) the type of transition. (fade|wipe|slide|random) Default: fade</dd>
+			
+			<dt>duration</dt>
+			<dd>(number) the duration of the transition</dd>
+			
+			<dt>transition</dt>
+			<dd>Default: Fx.Transitions.linear</dd>
+			
+			<dt>direction</dt>
+			<dd>(string) the direction from which the next slide comes from. not used with the fade effect. (top|right|bottom|left|random) Default: right</dd>
+			
+			<dt>wait</dt>
+			<dd>(number) the length of time to wait before showing the next slide.</dd>
+			
+			<dt>loop</dt>
+			<dd>(boolean) show the first slide again when the last one is reached. Default: true</dd>
+			
+			<dt>thumbnails</dt>
+			<dd>(mixed, array or string) show thumbnail indicator on these these thumbnails. Default: null</dd>
+			
+			<dt>thumbnailCls</dt>
+			<dd>(string) the classname to be applied to the thumbnail to indicate that it is the current one. Default: outline</dd>
+			
+			<dt>backgroundSlider</dt>
+			<dd>(object) a reference to a backgroundSlider instance. if used will overwrite the thumbnailCls. Default: null</dd>
+			
+			<dt>loadingCls</dt>
+			<dd>(string) the classname for the loading gif. Default: loading</dd>
+			
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>onClick</dt>
+			<dd>function to call when a slide is clicked.</dd>
+		</dl>
+		
+		<h3>methods:</h3>
+		<dl>
+			<dt>play</dt>
+			<dd>starts the slideshow.</dd>
+			
+			<dt>stop</dt>
+			<dd>stops the slideshow.</dd>
+			
+			<dt>next</dt>
+			<dd>goes to the next slide.</dd>
+			
+			<dt>previous</dt>
+			<dd>goes to the previous slide.</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new slideShow instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/index.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var show = new slideShow(
+	$('container'),
+	'slideShowImages',
+	{
+		wait: 3000,
+		duration: 1000,
+		effect: 'fade'
+	}
+);
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

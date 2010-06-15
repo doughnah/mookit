@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : validate</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>validate</h2>
+		<p class="version">version 2.2</p>
+		<p class="description">form validation.</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var val = new validate(el [, options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>el - (mixed, element or string)</li>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>validateOnBlur</dt>
+			<dd>(boolean) validates the input on the onBlur event. Default: true</dd>
+			
+			<dt>errorClass</dt>
+			<dd>(string) the classname to be applied to the input on error. Default: error</dd>
+			
+			<dt>errorMsgClass</dt>
+			<dd>(string) the classname to be applied to the error message. Default: errorMessage</dd>
+			
+			<dt>dateFormat</dt>
+			<dd>(string) the format which dates must be specified in. Default: dd/mm/yy</dd>
+			
+			<dt>showErrorsInline</dt>
+			<dd>(boolean) show the error message next to the input. Default: true</dd>
+			
+			<dt>label</dt>
+			<dd>(string) the text to be displayed on the submit button once clicked. Default: Please wait...</dd>
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>_onSuccess</dt>
+			<dd>function to call when the form has passed validation on submit. Passes a reference to the form.</dd>
+			
+			<dt>_onFail</dt>
+			<dd>function to call when the form fails validation on submit. Passes an array of errors.</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new validate instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/validate.htm">view demo</a>example:</h3>
+		<h4>HTML</h4>
+		<pre><code>
+&lt;label for='name'&gt;name:&lt;/label&gt; &lt;input type='text' name='name' class='required'&gt;
+&lt;label for='email'&gt;email:&lt;/label&gt; &lt;input type='text' name='email' class='required email'&gt;
+		</code></pre>
+		
+		<h4>JavaScript</h4>
+		<pre><code>
+var val = new validate($('myForm'));
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+				<li>date-en-gb</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

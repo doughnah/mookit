@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : pageLoader</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css" media="screen">
+	#basicContent p, #advancedContent p {
+		margin-top: 10px;
+	}
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/pageloader.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var basicLoader = new pageLoader({
+			links: $$('.basic'),
+			loadInTo: 'basicContent',
+			loadFrom: 'content'
+		});
+		
+		var advancedLoader = new pageLoader({
+			links: $$('.advanced'),
+			loadInTo: 'advancedContent',
+			loadFrom: 'content',
+			_onStart: function(){
+				alert('Loading external content...');
+			},
+			_onComplete: function(){
+				alert('Loaded complete.\nRendering content...');
+			}
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>pageLoader</h2>
+		<a class="view" href="../_docs/pageloader.htm">view docs</a><p class="version">version 1.1</p>
+		<p class="description">loads content from pages via AJAX.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>automatically overrides links with specified classname.</li>
+				<li>load content from a specified div.</li>
+				<li>load content into a specified div.</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<a href="../_img/_demo/content.htm" class="basic">get content</a>
+			<div id="basicContent"></div>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<a href="../_img/_demo/content.htm" class="advanced">get content</a>
+			<div id="advancedContent"></div>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

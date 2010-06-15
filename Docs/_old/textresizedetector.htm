@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : textResizeDetector</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>textResizeDetector</h2>
+		<p class="version">version 1.0</p>
+		<p class="description">captures when the text is resized.</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var detector = new textResizeDetector([options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>delay</dt>
+			<dd>(number) the amount of time (ms) to pause between checking. Default: 200</dd>
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>_onChange</dt>
+			<dd>function to call when the text has been resized.</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new textResizeDetector instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/textresizedetector.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var detector = new textResizeDetector({
+	onChange: function(){
+		alert('text changed');
+	}
+});
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

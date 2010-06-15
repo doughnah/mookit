@@ -1,0 +1,14 @@
+<div class="options">
+	<p>This is where config options can go.</p>
+	<p>choose you settings then make an ajax call to store them.</p>
+	<input type="button" value="Save" onclick="saveOptions(this)" /><br/>
+	<span class="log">&nbsp;</span>
+</div>
+<script type="text/javascript">
+	function saveOptions(el){
+		new Request.HTML({
+			url: 'optionsSaved.html',
+			update: $(el).getParent().getElement('.log')
+		}).get();
+	}	
+</script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Sortables</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+<style type="text/css" media="screen">
+	ul.myList {
+		margin-left: 20px;
+	}
+	
+	ul.myList li {
+		cursor: pointer;
+	}
+	
+	ul.myList li:hover {
+		background-color: #607293;
+		color: #fff;
+	}
+	
+	ul.anotherList {
+		width: 200px;
+		float: left;
+		border: 1px solid #607293;
+		background-color: #f9f9f9;
+		min-height: 20px;
+		margin: 5px;
+		padding-left: 20px;
+	}
+	
+	ul.anotherList li {
+		margin-left: 10px;
+		list-style-type: decimal;
+		cursor: pointer;
+	}
+	ul.anotherList li:hover {
+		background-color: #607293;
+		color: #fff;
+	}
+	#advanced {
+		overflow: auto;
+	}
+</style>
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../drag/drag.js"></script>
+<script type="text/javascript" src="../drag/drag.move.js"></script>
+<script type="text/javascript" src="../interface/sortables.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		
+		new Sortables($('basic').getElement('ul'));
+		
+		new Sortables($('advanced').getElements('ul'), {revert: true});
+
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Sortables</h2>
+		<a class="view" href="http://mootools.net/docs/Plugins/Sortables">view docs</a><p class="version">version 1.0</p>
+		<p class="description">Creates an interface for drag and drop sorting of a list or lists.</p>
+		
+		
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<ul class="myList">
+				<li>item #1</li>
+				<li>item #2</li>
+				<li>item #3</li>
+				<li>item #4</li>
+				<li>item #5</li>
+			</ul>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<ul class="anotherList">
+				<li>item #1</li>
+				<li>item #2</li>
+				<li>item #3</li>
+				<li>item #4</li>
+				<li>item #5</li>
+			</ul>
+			<ul class="anotherList">
+				<li><b>item #1</b></li>
+				<li><b>item #2</b></li>
+				<li><b>item #3</b></li>
+				<li><b>item #4</b></li>
+				<li><b>item #5</b></li>
+			</ul>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

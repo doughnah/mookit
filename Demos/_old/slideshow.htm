@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : slideShow</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css" media="screen">
+	#basicContainer {
+		border: 1px solid #454545;
+		width: 529px;
+		height: 350px;
+	}
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/assets.js"></script>
+<script type="text/javascript" src="../interface/slideShow.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var show = new slideShow(
+			$('basicContainer'),
+			'basicImages',
+			{
+				wait: 3000,
+				duration: 1000,
+				effect: 'fade'
+			}
+		).play();
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>slideShow - rewrite</h2>
+		<a class="view" href="../_docs/slideshow.htm">view docs</a><p class="version">version 1.4</p>
+		<p class="description">transitions between images</p>
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>multiple transition effects.</li>
+				<li>multiple transition directions.</li>
+				<li>loop.</li>
+				<li>current thumbnail image indication.</li>
+				<li>integration with backgroundSlider.</li>
+				<li>onClick event on the main image.</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<div id="basicContainer"></div>
+			<img src="../_img/_demo/img_5999.jpg" border="0" class="basicImages"><br>
+			<img src="../_img/_demo/img_5999.jpg" border="0" class="basicImages"><br>
+			<img src="../_img/_demo/img_5999.jpg" border="0" class="basicImages">
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

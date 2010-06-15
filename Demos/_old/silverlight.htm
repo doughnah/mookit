@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Silverlight</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css" media="screen">
+	
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+<script type="text/javascript" src="../Source/Utilities/Silverlight.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		//alert(Browser.Plugins.Silverlight.version);
+		
+			new Silverlight('/_common/swf/home.swf', {
+				id: 'home',
+				container: 'silverlight',
+				version: 4,
+				width: '400',
+				height: '400',
+				params: {
+					windowless: 'transparent'
+				}
+			});
+		
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		<div id="silverlight">
+			
+		</div>
+		
+
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : ContextMenu</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css" media="screen">
+	p {margin-bottom:1em;}
+	ul.rcMenu {display:none; position:absolute; z-index:2000; background:#ffffff; list-style:none; border:1px solid #ff0000;}
+	ul.rcMenu li {cursor:pointer; padding:2px 5px 2px 5px}
+	ul.rcMenu li:hover {background:#ff0000; color:#ffffff;}
+	
+	#footer {margin:0;}
+	div.content {padding-bottom:20px;}
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/ContextMenu.js"></script>
+
+<script type="text/javascript">
+
+	var menu;
+	var target;
+	var timer;
+
+	$(document).addEvent('click', function(e){
+		e = new Event(e);
+		//console.log(e);
+		if(e.rightClick){
+			e.stop();
+			//console.log(e.target);
+			target = e.target;
+			showMenu(e);
+		}else{
+			hideMenu();
+		}
+	});
+	
+	function showMenu(e){
+		menu.setStyles({
+			top: (e.page.y-10),
+			left: (e.page.x-20),
+			display: 'block'
+		});
+	}
+	
+	function hideMenu(){
+		menu.setStyles({
+			display: 'none'
+		});
+	}
+	
+	function addPara(num){
+		if (target.get('tag') == 'div'){
+			var parent = target;
+		}else{
+			var parent = target.getParent('div');
+		}
+		parent.empty();
+		
+		var lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+		
+		(num).times(function(){new Element('p', {'text':lorem}).inject(parent)});
+		hideMenu();
+	}
+	
+	function addImage(h,w){
+		new Element('img', {src:'http://labs.dev.mandogroup.com/placeholders/Placeholder.ashx?w='+w+'&h='+h+'&f=JPG'}).inject(target, 'after');
+	}
+	
+	window.addEvent('domready', function(){
+		menu = new Element('ul', {'class':'rcMenu'}).inject($(document.body));
+		new Element('li', {'text':'1 Paragraph', 'events':{'click':function(){addPara(1)}}}).inject(menu);
+		new Element('li', {'text':'2 Paragraphs', 'events':{'click':function(){addPara(2)}}}).inject(menu);
+		new Element('li', {'text':'3 Paragraphs', 'events':{'click':function(){addPara(3)}}}).inject(menu);
+		new Element('li', {'text':'4 Paragraphs', 'events':{'click':function(){addPara(4)}}}).inject(menu);
+		//
+		new Element('li', {'text':'----'}).inject(menu);
+		//
+		new Element('li', {'text':'Image thumb', 'events':{'click':function(){addImage(100,100)}}}).inject(menu);
+		new Element('li', {'text':'Image normal', 'events':{'click':function(){addImage(200,300)}}}).inject(menu);
+		new Element('li', {'text':'Image wide', 'events':{'click':function(){addImage(200,500)}}}).inject(menu);
+		
+		menu.addEvent('mouseout', function(){
+			timer = hideMenu.delay(500);
+		});
+		menu.addEvent('mouseover', function(){
+			$clear(timer);
+		});
+	});
+
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>ContentMenu</h2>
+		
+		
+		<div class="content">
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

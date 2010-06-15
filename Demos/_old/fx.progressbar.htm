@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Fx.ProgressBar</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+<style type="text/css">
+	
+	
+	#progress {
+		font-family: Tahoma, Arial, Helvetica, sans-serif;
+		font-size: 0.7em;
+		margin-top: 10px;
+	}
+	
+	#progress .bar {
+		
+	}
+	
+	#progress .percent {
+		
+	}
+	
+	#progress .size {
+		display: block;
+	}
+	
+	#progress .bar img {
+		background:				white url(../_img/_demo/progress.gif) no-repeat;
+		background-position:	+50% 0;
+		margin-right:			0.5em;
+	}
+	
+	
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../fx/fx.progressbar.js"></script>
+
+<script type="text/javascript">
+	var myProgress = {};
+	window.addEvent('domready', function(){
+		myProgress = new Fx.ProgressBar($('progressBar'), {
+			text: new Element('span').inject($('progress'), 'after')
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Fx.ProgressBar</h2>
+		<a class="view" href="../_docs/fx.progressbar.htm">view docs</a><p class="version">version 1.0</p>
+		<p class="description">an animated progrees bar indicator</p>
+
+		
+		<h3>example</h3>
+		<div id="basic">
+			<a href="javascript:;" onclick="myProgress.start(145, 200)">do progress (73%)</a>
+			<div id="progress">
+				<span class="bar"><img id="progressBar" src="../_img/_demo/bar.gif" /></span>
+			</div>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

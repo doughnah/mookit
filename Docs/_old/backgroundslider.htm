@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : backgroundSlider</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>backgroundSlider</h2>
+		<p class="version">version 1.3</p>
+		<p class="description">slides a layer to a given elements position and dimensions.</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var bgSlider = new backgroundSlider(elements [, options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>elements - (array)</li>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>duration</dt>
+			<dd>(number) the duration of the transition. Default: 300</dd>
+			
+			<dt>wait</dt>
+			<dd>(number) the amount of time before the slider should reset. Default: 500</dd>
+			
+			<dt>transition</dt>
+			<dd>Fx.Transitions.Sine.easeInOut</dd>
+			
+			<dt>id</dt>
+			<dd>(mixed, element or string) the div to use as the slider, if null a div will be created.</dd>
+			
+			<dt>className</dt>
+			<dd>(string) the classname to be applied to the slider div if created (id=null)</dd>
+			
+			<dt>start</dt>
+			<dd>(number) the number of the element to have the slider as default, otherwise the first element is default. (1)</dd>
+			
+			<dt>fixHeight</dt>
+			<dd>(number) a number to fix the height of the slider. It will not use the target's properties. Default: null</dd>
+			
+			<dt>fixWidth</dt>
+			<dd>(number) a number to fix the width of the slider. It will not use the target's properties. Default: null</dd>
+			
+			<dt>padding</dt>
+			<dd>(object) top, right, bottom, left values to add padding around the target element.</dd>
+			
+			<dt>mouseOver</dt>
+			<dd>(boolean) the slider will move to the target elements position on mouseover. Default: true</dd>
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>onClick</dt>
+			<dd>function to call when the target element is clicked. A reference to the element of passed in.</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new backgroundSlider instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/backgroundSlider.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var bgSlider = new backgroundSlider($$('myMenu a'));
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

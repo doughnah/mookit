@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : pageLoader</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>pageLoader</h2>
+		<p class="version">version 1.1</p>
+		<p class="description">loads content from pages via AJAX.</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var loader = new pageLoader([options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>links</dt>
+			<dd>(mixed, array or CSS selector) the links that will get the content. Default: '.loadMe'</dd>
+			
+			<dt>loadInTo</dt>
+			<dd>(mixed, element or string) the container that the content will be injected into. Default: content</dd>
+			
+			<dt>loadFrom</dt>
+			<dd>(mixed, element or string) the container that the content will be taken from. Default: content</dd>
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>_onStart</dt>
+			<dd>function to call when when the ajax request is made.</dd>
+			
+			<dt>_onComplete</dt>
+			<dd>function to call when the content has been loaded.</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new pageLoader instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/pageLoader.htm">view demo</a>example:</h3>
+		<h4>HTML</h4>
+		<pre><code>
+&lt;a href="myExtraPage.htm" class="loadMe"&gt;Extra Page&lt;/a&gt;
+		</code></pre>
+		<h4>JavaScript</h4>
+		<pre><code>
+var loader = new pageLoader({
+	links: $$('.loadMe')
+});
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

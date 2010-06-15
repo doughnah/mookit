@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : multiUpload</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>multiUpload</h2>
+		<p class="version">version 1.0</p>
+		<p class="description">Flash meets Ajax for simply working uploads. Based on FancyUpload by Harald Kirschner (digitarald)</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var uploader = new multiUpload(el, url [, options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>el - (element)</li>
+			<li>url - (string) - from the root of the site.</li>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>limitSize</dt>
+			<dd>the max file size in Bytes. Default: false</dd>
+			
+			<dt>limitFiles</dt>
+			<dd>the max number of files allowed to upload. Default: false</dd>
+			
+			<dt>instantStart</dt>
+			<dd>start uploading files as soon as they are selected. Default: false</dd>
+			
+			<dt>allowDuplicates</dt>
+			<dd>allow duplicate file to be uploaded. Default: false</dd>
+			
+			<dt>fileTypes</dt>
+			<dd>what files are allowed to be uploaded.</dd>
+			
+			<dt>path</dt>
+			<dd>the location of the Swiff.Uploader.swf. Default: /_common/swf/Swiff.Uploader.swf</dd>
+			
+			<dt>validateFile</dt>
+			<dd>function to call that returns true or false.</dd>
+			
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>onLoad</dt>
+			<dd>function to call when the multiUpload instance has loaded.</dd>
+			
+			<dt>fileInvalid</dt>
+			<dd>function to call when an invalid file is selected.</dd>
+			
+			<dt>fileCreate</dt>
+			<dd>function to call to create a file element.</dd>
+			
+			<dt>fileUpload</dt>
+			<dd>functio to call when the file is opened for upload.</dd>
+			
+			<dt>fileComplete</dt>
+			<dd>function to call when the file has finished uploading.</dd>
+			
+			<dt>fileRemove</dt>
+			<dd>function to call to remove the file from the queue.</dd>
+			
+			<dt>OnAddFile</dt>
+			<dd>function to call when a file is added to the queue.</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new multiUpload instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/multiUpload.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var uploader = new multiUpload(
+	$('uploadControls'),
+	'/processUpload.aspx',
+	{
+		fileTypes: 'jpg,jpeg,gif,png',
+		path: '/swf/Swiff.Uploader.swf'
+	}
+})
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+				<li>Swiff.Uploader</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

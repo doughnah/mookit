@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Page Title</title>
+
+		<script type="text/javascript" src="../mootools-1.2-core-nc.js"></script>
+		<script type="text/javascript" src="../utils.js"></script>
+		<script type="text/javascript">
+
+				ezHistory.register('test', 0, log)
+
+
+
+			function log(value){
+				alert('function called with value: '+value);
+			}
+
+
+
+		</script>
+	</head>
+	<body>
+		<iframe id='frame' src="blank.html" height="1" width="1" border="0" ></iframe>
+		<input type="button" value="set 1" onclick="ezHistory.set('test', 1)">
+		<input type="button" value="set 2" onclick="ezHistory.set('test', 2)">
+		<input type="button" value="set 3" onclick="ezHistory.set('test', 3)">
+		<br>
+		<div id="log"></div>
+	</body>
+</html>

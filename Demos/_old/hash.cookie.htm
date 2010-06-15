@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Hash.Cookie</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/hash.cookie.js"></script>
+
+<script type="text/javascript">
+	var basicHash = new Hash.Cookie('basic');
+	var adHash = new Hash.Cookie('advanced', {duration: 36000, autoSave: true});
+	
+	window.addEvent('domready', function(){
+		$('basicExample').set('value', basicHash.get('value'));
+		$('adExample').set('value', adHash.get('value'));
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Hash.Cookie</h2>
+		<a class="view" href="http://docs.mootools.net/Plugins/Hash.Cookie">view docs</a><p class="version">version 1.0</p>
+		<p class="description">Stores and loads a Hash as a Cookie using JSON format.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>autoSave</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<input type="text" id="basicExample">
+			<input type="button" value="save" onclick="basicHash.set('value', $('basicExample').value)">
+			<p>next time you come back this value will be saved!</p>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<input type="text" id="adExample" onchange="adHash.set('value', $('adExample').value)"> (autoSave enabled)
+			<p>next time you come back this value will be saved!</p>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

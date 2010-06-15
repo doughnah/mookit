@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Page Title</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+		<script type="text/javascript">
+
+
+
+		/*************************************************************
+			Class:		getNodes
+			Version:	1.0
+			Author:		Samuel Birch
+		*************************************************************/
+		Element.implement({
+		    getNodes: function(nodeName){
+		        var nodes = $A(this.childNodes);
+				for(var i=0; i<nodes.length; i++){
+					if(nodes[i].childNodes.length > 0){
+						nodes.extend(nodes[i].childNodes);
+					}
+				}
+				var results = nodes;
+				if(nodeName){
+					var type = 'nodeName';
+					if($type(nodeName) == 'number'){
+						type = 'nodeType';
+					}
+					results = [];
+					for(var i=0; i<nodes.length; i++){
+						if(nodes[i][type] == nodeName){
+							results.push(nodes[i]);
+						}
+					}
+				}
+				return results;
+		    }
+		});
+
+
+
+			window.addEvent('domready', function(){
+
+				$(document.body).getNodes('#comment').each(function(el,i){
+					var nodes = [];
+					var n = el.nextSibling;
+					if(el.nodeValue.test('ElementStart:')){
+						var node = el;
+						var id = el.nodeValue.replace('ElementStart:','').clean();
+						var endFound = false;
+						while(n != null && !endFound){
+							nodes.push(n);
+							n = n.nextSibling;
+							if(n != null){
+								if(n.nodeName == '#comment'){
+									if(n.nodeValue.replace('ElementEnd:', '').clean() == id){
+										endFound = true;
+										endNode = n;
+									}
+								}
+							}
+						}
+						var txt = '<element id="myID"><p>hello - test</p></element>';
+
+						var div = new Element('div').set('html', txt);
+	
+						var elements = div.getElements('element');
+
+						node.parentNode.insertBefore(div, n);
+						nodes.each(function(el,i){
+							el.parentNode.removeChild(el);
+						})
+
+						div.getChildren().inject(div, 'before');
+						div.destroy();
+
+						elements.each(function(e){
+							var parent = e.getParent();
+							
+							var startcomment = $(document).createComment('ElementStart:'+e.get('id'));
+							parent.insertBefore(startcomment, e);
+							
+							var endcomment = $(document).createComment('ElementEnd:'+e.get('id'));
+							if(e.nextSibling){
+								parent.insertBefore(endcomment, e.nextSibling);
+							}else{
+								parent.appendChild(endcomment);
+							}
+							
+	
+							e.getChildren().inject(e, 'after');
+							e.destroy();
+						});
+						
+					}
+
+				});
+
+				//insert comments
+				var el = $(document).getElement('#insertBoundary');
+				var parent = el.getParent();
+				var comment = $(document).createComment('ElementStart:insertBoundary');
+					parent.insertBefore(comment, el);
+					comment = $(document).createComment('ElementEnd:insertBoundary');
+					parent.replaceChild(comment, el);
+
+
+			});
+		</script>
+	</head>
+	<body>
+		<form>
+		<p>adsabndmb</p>
+
+		<div id="log"></div>
+
+		<!-- ElementStart: myPlaceHolder --><p>html code here ....</p><!-- ElementEnd: myPlaceHolder -->
+
+		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+		<!-- ElementStart: myPlaceHolder2 -->
+			<p>html code here ....</p>
+		<!-- ElementEnd: myPlaceHolder2 -->
+
+		<p>asgfds gj</p>
+
+		<div id='insertBoundary'>
+			this should eb replaced with comment boundry html comments
+		</div>
+		</form>
+	</body>
+</html>

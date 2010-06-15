@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Color</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+<style type="text/css" media="screen">
+	.box {
+		border: 1px solid #454545;
+		width: 40px;
+		height: 40px;
+		padding: 5px;
+		float: left;
+		margin-right: 10px;
+	}
+	#box1 {
+		background-color: #FF0000;
+	}
+	#box3 {
+		background-color: #0000ff;
+	}
+	.hex {
+		width: 48px;
+		margin-right: 7px;
+	}
+</style>
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/color.js"></script>
+
+<script type="text/javascript">
+	function doMix(){
+		var blue = new Color($('box1').getStyle('backgroundColor'));
+		var red = new Color($('box3').getStyle('backgroundColor'));
+		var mixed = blue.mix(red);
+		$('box2').setStyle('backgroundColor', mixed);
+		$('hex2').set('value', $('box2').getStyle('backgroundColor'));
+	}
+	function setColor(id){
+		$('box'+id).setStyle('backgroundColor', $('hex'+id).get('value'));
+	}
+	function doInvert(){
+		var c1 = new Color($('box1').getStyle('backgroundColor')).invert();
+		var c2 = new Color($('box2').getStyle('backgroundColor')).invert();
+		var c3 = new Color($('box3').getStyle('backgroundColor')).invert();
+		
+		$('box1').setStyle('backgroundColor', c1);
+		$('hex1').set('value', $('box1').getStyle('backgroundColor'));
+		$('box2').setStyle('backgroundColor', c2);
+		$('hex2').set('value', $('box2').getStyle('backgroundColor'));
+		$('box3').setStyle('backgroundColor', c3);
+		$('hex3').set('value', $('box3').getStyle('backgroundColor'));
+	}
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Color</h2>
+		<a class="view" href="http://docs.mootools.net/Plugins/color">view docs</a><p class="version">version 1.0</p>
+		<p class="description">Creates a new Color Class, which is an array with some color specific methods.</p>
+		
+		
+		
+		<h3>examples</h3>
+		<div id="basic">
+			<div id="box1" class="box"></div>
+			<div id="box2" class="box"></div>
+			<div id="box3" class="box"></div>
+			<div class="clear"></div>
+			<input type="text" id="hex1" value="#ff0000" class="hex" onchange="setColor(1)">
+			<input type="text" id="hex2" value="" class="hex">
+			<input type="text" id="hex3" value="#0000ff" class="hex" onchange="setColor(3)">
+			
+			<p><br><input type="button" value="mix" onclick="doMix()"></p>
+			<p><br><input type="button" value="invert" onclick="doInvert()"></p>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

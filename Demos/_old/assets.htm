@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Assets</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/assets.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		
+	});
+	
+	function loadImage(){
+		var myImage = new Asset.image('/_img/_demo/timg_5999.jpg', {
+			title: 'my image',
+			alt: 'my image'
+		}).inject($('basic'), 'after');
+	}
+	function loadImages(){
+		var myImages = ['/_img/_demo/timg_5999.jpg', '/_img/_demo/timg_6608.jpg', '/_img/_demo/timg_8054.jpg'];
+		var myImage = new Asset.images(myImages).inject($('basic'), 'after');
+	}
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Assets</h2>
+		<a class="view" href="http://mootools.net/docs/Plugins/Assets">view docs</a><p class="version">version 1.0</p>
+		<p class="description">Provides methods for the dynamic loading and management of JavaScript, CSS, and image files.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>javascript</li>
+				<li>css</li>
+				<li>image</li>
+				<li>images</li>
+			</ul>
+		</div>
+		
+		<h3>example</h3>
+		<div id="basic">
+			<input type="button" value="load image" onclick="loadImage()"> <input type="button" value="load images" onclick="loadImages()">
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

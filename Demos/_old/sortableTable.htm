@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : sortableTable</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<link rel="stylesheet" href="../_css/sortabletable.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../interface/sortableTable.js"></script>
+
+<script type="text/javascript">
+	var advancedTable = {};
+	
+	window.addEvent('domready', function(){
+		new sortableTable('basicTable', {
+			overCls: 'over'
+		});
+		
+		advancedTable = new sortableTable('advancedTable', {
+			overCls: 'over',
+			filterHide: false,
+			onClick: function(){
+				alert(this.id);
+			}
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>sortableTable</h2>
+		<a class="view" href="../_docs/sortabletable.htm">view docs</a><p class="version">version 1.4</p>
+		<p class="description">column sorting and row filtering on tables.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>sort on column headers.</li>
+				<li>filter on column headers.</li>
+				<li>show filtered results only.</li>
+				<li>highlight filtered results.</li>
+				<li>row highlighting onRollover.</li>
+				<li>onClick event on rows.</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+		  <table id="basicTable" cellpadding="0" cellpadding="0">
+		  	<thead>
+				<th axis="number">ID</th>
+				<th axis="string">Firstname</th>
+				<th axis="string">Lastname</th>
+				<th axis="string">Department</th>
+				<th axis="date">Start Date</th>
+			</thead>
+			<tbody>
+				<tr id="1">
+					<td>1</td>
+					<td>Sam</td>
+					<td>Birch</td>
+					<td>Programming</td>
+					<td>01/06/00</td>
+				</tr>
+				<tr id="2">
+					<td>2</td>
+					<td>George</td>
+					<td>Lo</td>
+					<td>Support</td>
+					<td>01/07/99</td>
+				</tr>
+				<tr id="3">
+					<td>3</td>
+					<td>kevin</td>
+					<td>Walker</td>
+					<td>Programming</td>
+					<td>01/06/05</td>
+				</tr>
+				<tr id="4">
+					<td>4</td>
+					<td>Peter</td>
+					<td>Aland</td>
+					<td>Project Management</td>
+					<td>23/10/06</td>
+				</tr>
+				<tr id="5">
+					<td>5</td>
+					<td>Rachel</td>
+					<td>Dickinson</td>
+					<td>Design</td>
+					<td>20/01/05</td>
+				</tr>
+				<tr id="6">
+					<td>6</td>
+					<td>John</td>
+					<td>Tsang</td>
+					<td>Support</td>
+					<td>05/10/05</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tfoot>
+		  </table>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<div class="tableFilter">
+		  		<form id="tableFilter" onsubmit="advancedTable.filter(this.id); return false;">Filter: 
+					<select id="column">
+		  				<option value="1">Firstname</option>
+						<option value="2">Lastname</option>
+						<option value="3">Department</option>
+						<option value="4">Start Date</option>
+					</select>
+					<input type="text" id="keyword" />
+					<input type="submit" value="Submit" />
+					<input type="reset" value="Clear" />
+				</form>
+		  </div>
+			<table id="advancedTable" cellpadding="0" cellpadding="0">
+			  	<thead>
+					<th axis="number">ID</th>
+					<th axis="string">Firstname</th>
+					<th axis="string">Lastname</th>
+					<th axis="string">Department</th>
+					<th axis="date">Start Date</th>
+				</thead>
+				<tbody>
+					<tr id="1">
+						<td>1</td>
+						<td>Sam</td>
+						<td>Birch</td>
+						<td>Programming</td>
+						<td>01/06/00</td>
+					</tr>
+					<tr id="2">
+						<td>2</td>
+						<td>George</td>
+						<td>Lo</td>
+						<td>Support</td>
+						<td>01/07/99</td>
+					</tr>
+					<tr id="3">
+						<td>3</td>
+						<td>kevin</td>
+						<td>Walker</td>
+						<td>Programming</td>
+						<td>01/06/05</td>
+					</tr>
+					<tr id="4">
+						<td>4</td>
+						<td>Peter</td>
+						<td>Aland</td>
+						<td>Project Management</td>
+						<td>23/10/06</td>
+					</tr>
+					<tr id="5">
+						<td>5</td>
+						<td>Rachel</td>
+						<td>Dickinson</td>
+						<td>Design</td>
+						<td>20/01/05</td>
+					</tr>
+					<tr id="6">
+						<td>6</td>
+						<td>John</td>
+						<td>Tsang</td>
+						<td>Support</td>
+						<td>05/10/05</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tfoot>
+			  </table>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

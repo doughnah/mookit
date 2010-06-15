@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : multiUpload</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css">
+	
+	
+	.summary {
+		font-family: Tahoma, Arial, Helvetica, sans-serif;
+		font-size: 1em;
+		padding: 10px 0;
+	}
+	
+	.progress {
+		font-family: Tahoma, Arial, Helvetica, sans-serif;
+		font-size: 1em;
+	}
+	
+	.progress .bar {
+		
+	}
+	
+	.progress .percent {
+		
+	}
+	
+	.progress .size {
+		display: block;
+	}
+	
+	.progress .bar img {
+		background:				white url(../_img/_demo/progress.gif) no-repeat;
+		background-position:	+50% 0;
+		margin-right:			0.5em;
+	}
+	
+	.showHide {
+		font-family: Tahoma, Arial, Helvetica, sans-serif;
+		font-size: 1em;
+		padding: 10px 0;
+	}
+	.showHide a {
+		text-decoration: none;
+	}
+	.showHide a:hover {
+		text-decoration: underline;
+	}
+	
+	ul.fileList {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-family: Tahoma, Arial, Helvetica, sans-serif;
+		font-size: 1em;
+		width: 250px;
+		border-top: 1px solid #dedede;
+	}
+	
+	ul.fileList li {
+		border-bottom: 1px solid #dedede;
+		padding: 5px 0;
+	}
+	
+	ul.fileList li .size {
+		float: right;
+	}
+	ul.fileList li .remove {
+		float: right;
+		text-decoration: none;
+	}
+	ul.fileList li .status {
+		display: block;
+		color: #aaa;
+	}
+	
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../Swiff/Swiff.Uploader.js"></script>
+<script type="text/javascript" src="../Fx/Fx.ProgressBar.js"></script>
+<script type="text/javascript" src="../Fx/Fx.Slide.js"></script>
+<script type="text/javascript" src="../interface/multiupload.js"></script>
+
+
+<script type="text/javascript">
+	var showHideFiles = {};
+	window.addEvent('domready', function(){
+		
+		showHideFiles = new Fx.Slide($('myImages_container').getElement('.fileListContainer')).hide();
+		
+		new multiUpload($('myImages_container'), {
+			id: $('myImages').get('id'),
+			fileTypes: $('myImages').get('fileTypes'),
+			path: '../_img/multiUpload/Swiff.Uploader.swf',
+			url: 'multiUpload.htm',
+			target: 'browse',
+			OnAddFile: function(){
+				if(showHideFiles.open){
+					showHideFiles.show();
+				}
+			}
+		});
+		
+		$('myImages').destroy();
+		$('myImages_container').setStyle('display','block');
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>multiUpload</h2>
+		<a class="view" href="../_docs/multiupload.htm">view docs</a><p class="version">version 1.0</p>
+		<p class="description">Flash meets Ajax for simply working uploads. Based on FancyUpload by Harald Kirschner (digitarald)</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>upload when added.</li>
+				<li>add to queue.</li>
+				<li>limit number of files and file size.</li>
+				<li>restrict file types.</li>
+			</ul>
+		</div>
+		
+		<h3>example</h3>
+		<div id="basic">
+			<form action="upload.php" method="post" enctype="multipart/form-data" id="form-demo">
+				<input type="file" id="myImages" fileTypes="jpg,jpeg,gif,png" />
+
+				<div id="myImages_container" style="display:none;">
+					<input type="hidden" class="hiddenFiles" name="myImages" />
+					<input type="button" id="browse" class="browse" value="Browse..." />
+					<input type="button" class="upload" value="Upload" />
+					<div class="summary">Click browse to add files to upload.</div>
+					<div class="progress">
+						<span class="bar"><img src="../_img/_demo/bar.gif" /></span>
+						<span class="percent">0%</span>
+						<span class="size">0 / 0</span>
+					</div>
+					<div class="showHide"><a href="javascript:;" onclick="showHideFiles.toggle();">show/hide files</a></div>
+					<div class="fileListContainer">
+						<ul class="fileList">
+							<li class="file">
+								<span class="size"></span>
+								<span class="name">No files queued</span>
+								<a href="#" class="remove">Remove [x]</a>
+								<span class="status"></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

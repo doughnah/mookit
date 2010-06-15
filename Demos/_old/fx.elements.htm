@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Fx.Elements</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+<style type="text/css" media="screen">
+	#basic div, #advanced div {
+		width: 30px;
+		height: 30px;
+		background-color: #607293;
+		color: #fff;
+		font-size: 2em;
+		font-weight: bold;
+		padding: 10px;
+		float: left;
+		margin-right: 20px;
+		margin-top: 10px;
+	}
+	
+	.clear {
+		clear: both;
+	}
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../fx/fx.elements.js"></script>
+
+<script type="text/javascript">
+	var basicFx = {};
+	var advancedFx = {}; 
+	window.addEvent('domready', function(){
+		basicFx = new Fx.Elements($$('#basic div'));
+		advancedFx = new Fx.Elements($$('#advanced div'), {
+			onComplete: function(){
+				$('status').set('text', 'completed');
+			}
+		});
+	});
+	
+	function doBasicFx(){
+		var o = {};
+		for(var i=0; i<basicFx.elements.length; i++){
+			o[i] = {'opacity':0.3}
+		}
+		basicFx.start(o);
+	}
+	
+	function doBasicReset(){
+		var o = {};
+		for(var i=0; i<basicFx.elements.length; i++){
+			o[i] = {'opacity':1}
+		}
+		basicFx.set(o);
+	}
+	
+	function doAdvancedFx(){
+		advancedFx.start({
+			'0': {
+				'width': 100
+			},
+			'1': {
+				'background-color': '#FF0000'
+			},
+			'3': {
+				'opacity': 0.3,
+				'height': 50
+			}
+		});
+	}
+	
+	function doAdvancedReset(){
+		advancedFx.set({
+			'0': {
+				'width': 30
+			},
+			'1': {
+				'background-color': '#607293'
+			},
+			'3': {
+				'opacity': 1,
+				'height': 30
+			}
+		});
+		$('status').set('text', '');
+	}
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Fx.Elements</h2>
+		<a class="view" href="http://docs.mootools.net/Plugins/Fx.Elements">view docs</a><p class="version">version 1.0</p>
+		<p class="description">Fx.Elements allows you to apply any number of styles transitions to a collection of Elements.</p>
+		
+		
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<a href="javascript:;" onclick="doBasicFx()">do effects</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="doBasicReset()">reset</a>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+		<div class="clear"></div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<a href="javascript:;" onclick="doAdvancedFx()">do effects</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="doAdvancedReset()">reset</a>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+		<div id="status" class="clear"></div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

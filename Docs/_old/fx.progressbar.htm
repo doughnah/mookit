@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Fx.ProgressBar</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Fx.ProgressBar</h2>
+		<p class="version">version 1.0</p>
+		<p class="description">an animated progrees bar indicator</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var myFx = new Fx.ProgressBar((el [, options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>el - (element)</li>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>text</dt>
+			<dd>(element) to update with percentage text</dd>
+			<dt>transition</dt>
+			<dd>default: Fx.Transitions.Circ.easeOut</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new Fx.ProgressBar instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/index.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var myProgress = new Fx.ProgressBar($('progress'), {
+	text: new Element('span').inject($('progress'), 'after')
+});
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

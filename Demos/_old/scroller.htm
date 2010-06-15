@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Scroller</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+<style type="text/css" media="screen">
+	#basic {
+		height: 200px;
+		overflow: hidden;
+	}
+	#basic p {
+		margin-bottom: 10px;
+	}
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../interface/scroller.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		new Scroller('basic', {
+			area: 50,
+			velocity: 0.2
+		}).start();
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Scroller</h2>
+		<a class="view" href="http://mootools.net/docs/Plugins/Scroller">view docs</a><p class="version">version 1.1</p>
+		<p class="description">The Scroller is a Class to scroll any element with an overflow (including the window) when the mouse cursor reaches certain boundaries of that element.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>specify the hit area size</li>
+				<li>specify the velocity</li>
+			</ul>
+		</div>
+		
+		<h3>example</h3>
+		<div id="basic">
+			<div id="scroller">
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin magna mauris, fermentum eu, faucibus porta, adipiscing non, nulla. Suspendisse vitae diam ut nisl auctor sagittis. Morbi at enim at enim pellentesque eleifend. Vivamus lacus ante, ullamcorper eu, molestie quis, venenatis vitae, felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pellentesque pulvinar velit. Etiam lectus urna, bibendum quis, vulputate id, gravida eget, sapien. Mauris ac mi vel orci porta fringilla. Sed quis diam. Proin dictum. Nam commodo neque non nisi blandit accumsan. Quisque adipiscing est eget lacus. Proin vel nisi. Sed mattis risus ut mi. Morbi dolor. Nam sodales neque vitae lorem. Maecenas mi. Aliquam nisl. Nunc eget ante. Etiam felis.
+			</p><p>
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus justo. Sed quis neque et diam varius rutrum. In hac habitasse platea dictumst. Nunc egestas, lorem sit amet venenatis consectetuer, nisl est auctor magna, in fringilla sem tortor in felis. Sed pulvinar pulvinar turpis. Aliquam posuere. Sed massa urna, egestas id, posuere ac, convallis ut, est. Ut nec purus. Morbi at mauris et nulla venenatis egestas. Aliquam erat volutpat. Praesent dictum volutpat nulla.
+</p><p>
+Nunc et lorem. Integer ut lorem non nisi egestas interdum. Aliquam ullamcorper vehicula est. Suspendisse a arcu. Mauris lectus tortor, hendrerit et, vulputate vitae, commodo quis, ligula. Cras condimentum, sem pretium luctus ornare, neque augue varius arcu, quis rhoncus sapien nulla eget neque. Sed a ligula. Nulla facilisi. Sed est. Aliquam massa metus, molestie a, vestibulum vel, iaculis in, velit. In vel justo ac turpis auctor hendrerit. Vestibulum tincidunt. Phasellus nisi nisl, tempus a, posuere eu, placerat quis, justo. Praesent magna.
+</p><p>
+Quisque molestie arcu nec elit mollis facilisis. Donec eu diam. Praesent ut enim at sapien dictum semper. Duis nisl nisl, condimentum a, tempor a, accumsan nec, est. Integer ullamcorper odio in nisi. Suspendisse ut quam. Nunc aliquam elit scelerisque leo. Cras imperdiet. Nulla facilisis, justo sed ornare luctus, lorem libero cursus leo, at vulputate magna odio non dui. Aenean nec est ut urna dapibus vulputate. Nam mollis. </p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin magna mauris, fermentum eu, faucibus porta, adipiscing non, nulla. Suspendisse vitae diam ut nisl auctor sagittis. Morbi at enim at enim pellentesque eleifend. Vivamus lacus ante, ullamcorper eu, molestie quis, venenatis vitae, felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pellentesque pulvinar velit. Etiam lectus urna, bibendum quis, vulputate id, gravida eget, sapien. Mauris ac mi vel orci porta fringilla. Sed quis diam. Proin dictum. Nam commodo neque non nisi blandit accumsan. Quisque adipiscing est eget lacus. Proin vel nisi. Sed mattis risus ut mi. Morbi dolor. Nam sodales neque vitae lorem. Maecenas mi. Aliquam nisl. Nunc eget ante. Etiam felis.
+			</p><p>
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus justo. Sed quis neque et diam varius rutrum. In hac habitasse platea dictumst. Nunc egestas, lorem sit amet venenatis consectetuer, nisl est auctor magna, in fringilla sem tortor in felis. Sed pulvinar pulvinar turpis. Aliquam posuere. Sed massa urna, egestas id, posuere ac, convallis ut, est. Ut nec purus. Morbi at mauris et nulla venenatis egestas. Aliquam erat volutpat. Praesent dictum volutpat nulla.
+</p><p>
+Nunc et lorem. Integer ut lorem non nisi egestas interdum. Aliquam ullamcorper vehicula est. Suspendisse a arcu. Mauris lectus tortor, hendrerit et, vulputate vitae, commodo quis, ligula. Cras condimentum, sem pretium luctus ornare, neque augue varius arcu, quis rhoncus sapien nulla eget neque. Sed a ligula. Nulla facilisi. Sed est. Aliquam massa metus, molestie a, vestibulum vel, iaculis in, velit. In vel justo ac turpis auctor hendrerit. Vestibulum tincidunt. Phasellus nisi nisl, tempus a, posuere eu, placerat quis, justo. Praesent magna.
+</p><p>
+Quisque molestie arcu nec elit mollis facilisis. Donec eu diam. Praesent ut enim at sapien dictum semper. Duis nisl nisl, condimentum a, tempor a, accumsan nec, est. Integer ullamcorper odio in nisi. Suspendisse ut quam. Nunc aliquam elit scelerisque leo. Cras imperdiet. Nulla facilisis, justo sed ornare luctus, lorem libero cursus leo, at vulputate magna odio non dui. Aenean nec est ut urna dapibus vulputate. Nam mollis. </p>
+			</div>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

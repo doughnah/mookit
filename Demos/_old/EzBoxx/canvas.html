@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Page Title</title>
+
+		<style type="text/css">
+			/* {
+				margin: 0;
+				padding: 0;
+			}*/
+			body {
+				font-family: tahoma, arial, helvetica;
+				font-size: 76%;
+				color: #000;
+				font-weight: normal;
+				padding: 100px;
+			}
+			
+			#bob {
+				width: 300px;
+				height: 200px;
+			}
+			
+		</style>
+
+
+		<script type="text/javascript" src="../mootools-1.2-core-nc.js"></script>
+		<script type="text/javascript" src="../utils.js"></script>
+		<script type="text/javascript">
+			window.addEvent('domready', function(){
+				/*var ctx = new Canvas();
+					ctx.getContext('2d');
+					ctx.inject(document.body);*/
+					
+				var cv = new Canvas();
+				var ctx = cv.getContext('2d');
+					$(document.body).adopt(cv);
+					
+					cv.set({
+						width: 120,
+						height: 120
+					});
+					
+					//console.log(ctx);
+					
+					x = 0;
+					y = 0;
+					width = 100;
+					height = 100;
+					radius = 16;
+					rgb = [255, 0, 0];
+					a = 100;
+					shadowBlur = 5;
+					shadowOpacity = 0.2;
+					
+					cv.set({
+						width: width+shadowBlur,
+						height: height+shadowBlur
+					});
+					
+					//outer glow
+					/*for(var i=0; i<shadowBlur; i++){
+						
+						sx = 5-(i+1)*1;
+						sy = 5-(i+1)*1;
+						swidth = 100+((i+1)*2);
+						sheight = 100+((i+1)*2);
+						sradius = 16+(i+1);
+						srgb = [0, 0, 0];
+						sa = shadowOpacity;
+						//sa = 0.5 + (0.01 * (i+1)) * opacity
+						
+						ctx.fillStyle = 'rgba(' + srgb.join(',') + ',' + sa + ')';
+						ctx.beginPath();
+						ctx.moveTo(sx, sy + sradius);
+						ctx.lineTo(sx, sy + sheight - sradius);
+						ctx.quadraticCurveTo(sx, sy + sheight, sx + sradius, sy + sheight);
+						ctx.lineTo(sx + swidth - sradius, sy + sheight);
+						ctx.quadraticCurveTo(sx + swidth, sy + sheight, sx + swidth, sy + sheight - sradius);
+						ctx.lineTo(sx + swidth, sy + sradius);
+						ctx.quadraticCurveTo(sx + swidth, sy, sx + swidth - sradius, sy);
+						ctx.lineTo(sx + sradius, sy);
+						ctx.quadraticCurveTo(sx, sy, sx, sy + sradius);
+						ctx.fill();
+					}*/
+					
+					//drop shadow
+					for(var i=0; i<shadowBlur; i++){
+						
+						sx = 0+((i+1)*1);
+						sy = 0+((i+1)*1);
+						swidth = 100;
+						sheight = 100;
+						sradius = 16+(i+1);
+						srgb = [0, 0, 0];
+						sa = shadowOpacity;
+						//sa = 0.5 + (0.01 * (i+1)) * opacity
+						
+						ctx.fillStyle = 'rgba(' + srgb.join(',') + ',' + sa + ')';
+						ctx.beginPath();
+						ctx.moveTo(sx, sy + sradius);
+						ctx.lineTo(sx, sy + sheight - sradius);
+						ctx.quadraticCurveTo(sx, sy + sheight, sx + sradius, sy + sheight);
+						ctx.lineTo(sx + swidth - sradius, sy + sheight);
+						ctx.quadraticCurveTo(sx + swidth, sy + sheight, sx + swidth, sy + sheight - sradius);
+						ctx.lineTo(sx + swidth, sy + sradius);
+						ctx.quadraticCurveTo(sx + swidth, sy, sx + swidth - sradius, sy);
+						ctx.lineTo(sx + sradius, sy);
+						ctx.quadraticCurveTo(sx, sy, sx, sy + sradius);
+						ctx.fill();
+					}
+					
+					
+					//roundedRect: function(ctx, x, y, width, height, radius, rgb, a){
+						ctx.fillStyle = 'rgba(' + rgb.join(',') + ',' + a + ')';
+						ctx.beginPath();
+						ctx.moveTo(x, y + radius);
+						ctx.lineTo(x, y + height - radius);
+						ctx.quadraticCurveTo(x, y + height, x + radius, y + height);
+						ctx.lineTo(x + width - radius, y + height);
+						ctx.quadraticCurveTo(x + width, y + height, x + width, y + height - radius);
+						ctx.lineTo(x + width, y + radius);
+						ctx.quadraticCurveTo(x + width, y, x + width - radius, y);
+						ctx.lineTo(x + radius, y);
+						ctx.quadraticCurveTo(x, y, x, y + radius);
+						ctx.fill(); 
+						
+						
+				var box = new canvasBox({
+					container:'bob',
+					bg: 'ff0000',
+					shadowType: 'drop',
+					radius: 40
+				});
+					//box.resize();
+					
+			});
+		</script>
+	</head>
+	<body>
+		<div id="bob"></div>
+	</body>
+</html>

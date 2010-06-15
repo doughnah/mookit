@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : multiBox</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<link rel="stylesheet" href="../_css/multiBox.css" type="text/css" media="all">
+<!--[if lte IE 6]><link rel="stylesheet" href="../css/multibox-ie6.css" type="text/css" media="all"><![endif]-->
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/overlay.js"></script>
+<script type="text/javascript" src="../utilities/assets.js"></script>
+<script type="text/javascript" src="../interface/multiBox.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var box = new multiBox('mb', {
+			overlay: new overlay()
+		});
+		
+		var advanced = new multiBox('advanced', {
+			overlay: new overlay(),
+			path: '../_img/_demo/',
+			descClassName: 'advancedDesc'
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>multiBox</h2>
+		<a class="view" href="../_docs/multibox.htm">view docs</a><p class="version">version 1.3.2</p>
+		<p class="description">lightbox that supports jpg, gif, png, flash, flv, mov, wmv, mp3, html, iframe</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>supports a range of multimedia formats.</li>
+				<li>auto detects format or you can specify the format.</li>
+				<li>supports html descriptions.</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<a href="../_img/_demo/img_5999.jpg" class="mb" title="example title a"><img src="../_img/_demo/timg_5999.jpg" border="0"></a>
+			<a href="../_img/_demo/img_6608.jpg" class="mb" title="example title b"><img src="../_img/_demo/timg_6608.jpg" border="0"></a>
+			<a href="../_img/_demo/img_8054.jpg" class="mb" title="example title c"><img src="../_img/_demo/timg_8054.jpg" border="0"></a>
+		</div>
+		
+		<h3>advanced examples</h3>
+		<div id="advanced">
+			<a href="../_img/_demo/img_8054.jpg" class="advanced" id="ad1" title="html description example"><img src="../_img/_demo/timg_8054.jpg" border="0"></a><br>
+			<div class="advancedDesc ad1">This is an HTML description<br>photos by <a href="http://www.aaronbirchphotography.com">Aaron Birch</a></div>
+			<a href="../_img/_demo/curly.flv" rel="width:400,height:300" class="advanced" title="flv example">flv example</a><br>
+			<a href="../_img/_demo/curly.mov" rel="width:400,height:310" class="advanced" title="mov example">mov example</a><br>
+			<a href="../_img/_demo/curly.wmv" rel="width:400,height:300" class="advanced" title="wmv example">wmv example</a><br>
+			<a href="../_img/_demo/curly.rmvb" rel="width:400,height:300" class="advanced" title="real example">real example</a><br>
+			<a href="../_img/_demo/music.mp3" class="advanced" title="mp3 example">mp3 example</a><br>
+			<a href="../_img/_demo/blank.htm" rel="width:400,height:300" class="advanced" title="iFrame">iframe example</a><br>
+			<a href="../_img/_demo/blank-ajax.htm" rel="width:400,height:300,ajax:true" class="advanced" title="AJAX">ajax example</a><br>
+			<a href="#htmlElement" rel="type:element" class="advanced" title="HTML element">HTML element example</a><br>
+			<div id="htmlElement"><p>This is a snipet of html.</p><ul><li>list item 1</li><li>list item 2</li></ul></div>
+			
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

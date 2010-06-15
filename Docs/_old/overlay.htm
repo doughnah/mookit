@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : overlay</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>overlay</h2>
+		<p class="version">version 1.2</p>
+		<p class="description">covers the window with a semi-transparent layer.</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var myOverlay = new overlay([options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>colour</dt>
+			<dd>(string) the color of the layer. Default: #000</dd>
+			
+			<dt>opacity</dt>
+			<dd>(number) the value the layer should fade too. (0-1) Default: 0.7</dd>
+			
+			<dt>zIndex</dt>
+			<dd>(number) the z-index of the layer. Default: 1</dd>
+			
+			<dt>container</dt>
+			<dd>(element) the element that the layer should cover. Default: document.body</dd>
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>_onClick</dt>
+			<dd>function to call when the layer is clicked.</dd>
+		</dl>
+		
+		<h3>methods:</h3>
+		<dl>
+			<dt>show</dt>
+			<dd>&nbsp;</dd>
+			
+			<dt>hide</dt>
+			<dd>&nbsp;</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new overlay instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/overlay.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var myOverlay = new overlay({
+	onClick: function(){
+		this.hide();
+	}
+});
+myOverlay.show();
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

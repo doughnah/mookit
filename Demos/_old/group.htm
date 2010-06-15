@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Group</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+<style type="text/css" media="screen">
+	#basic div {
+		width: 30px;
+		height: 30px;
+		background-color: #607293;
+		color: #fff;
+		font-size: 2em;
+		font-weight: bold;
+		padding: 10px;
+		float: left;
+		margin-right: 20px;
+		margin-top: 10px;
+	}
+	
+	.clear {
+		clear: both;
+	}
+</style>
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../fx/fx.elements.js"></script>
+<script type="text/javascript" src="../utilities/group.js"></script>
+
+<script type="text/javascript">
+	var fx1, fx2, fx4 
+	window.addEvent('domready', function(){
+		fx1 = new Fx.Morph('box1', {duration: 'long'});
+		fx2 = new Fx.Morph('box2', {duration: 'normal'});
+		fx4 = new Fx.Morph('box4', {duration: 'short'});
+		
+		var group = new Group(fx1, fx2, fx4);
+		group.addEvent('complete', function(){
+			$('status').set('text', 'all effects completed');
+		});
+	});
+	
+	function doAdvancedFx(){
+		
+		fx1.start({width: 200});
+		fx2.start({'background-color': '#ff0000'});
+		fx4.start({'opacity': 0.3, 'height': 50});
+	}
+	
+	function doAdvancedReset(){
+		fx1.set({width: 30});
+		fx2.set({'background-color': '#607293'});
+		fx4.set({'opacity': 1, 'height': 30});
+		$('status').set('text', '');
+	}
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Group</h2>
+		<a class="view" href="http://mootools.net/docs/Plugins/Group">view docs</a><p class="version">version 1.0</p>
+		<p class="description">This class is for grouping Classes or Events. The Event added to the Group will fire when all of the events of the items of the group are fired.</p>
+		
+		
+		
+		<h3>example</h3>
+		<div id="basic">
+			<a href="javascript:;" onclick="doAdvancedFx()">do effects</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="doAdvancedReset()">reset</a>
+			<div id="box1">1</div>
+			<div id="box2">2</div>
+			<div id="box3">3</div>
+			<div id="box4">4</div>
+		</div>
+		<div id="status" class="clear"></div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

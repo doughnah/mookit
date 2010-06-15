@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Page Title</title>
+		<style type="text/css">
+			body {
+				font-family: arial, helvetica, serif;
+			}
+
+			#nav1 { /* all lists */
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				line-height: 1em;
+			}
+
+			#nav1 a {
+				display: block;
+				width: 9em;
+				padding: .5em;
+				border-bottom: 1px solid #808080;
+				text-decoration: none;
+				color: black;
+			}
+
+			#nav1 li { /* all list items */
+				float: left;
+				width: 10em; /* width needed or else Opera goes nuts */
+				background: url(dropdown_bg.gif) no-repeat;
+			}
+
+			#nav1 li ul { /* second-level lists */
+				position: absolute;
+				padding: 0;
+				list-style: none;
+				border-left: 1px solid #808080;
+				border-right: 1px solid #808080;
+				width: 10em;
+				left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+			}
+			
+			#nav1 li ul a {
+				width: 9em;
+			}
+			
+			#nav1 li ul a.arrow {
+				background: url(dropdown_arrow.png) no-repeat right;
+			}
+			
+			#nav1 li ul a:hover, #nav1 li ul a.selected {
+				
+				color: white;
+			}
+
+			#nav1 li ul ul { /* third-and-above-level lists */
+				margin: -2.1em 0 0 10em;
+				border-top: 1px solid #808080;
+			}		
+
+			#nav1 li:hover > ul { /* shows lists nested DIRECTLY under hovered list item */
+				left: auto;
+			}
+			#nav1 .soasfhover {/*Split up for IE6 Compatability*/
+				left:auto;
+			}
+			#nav1 li:hover { /*Fix for IE7*/
+				position: static;
+			}
+			#nav1 ul li:hover, #nav1 ul .soasfhover, #nav1 ul li.selected {
+				background: url(dropdown_bg.gif) no-repeat 0 -32px;
+			}
+			
+			
+			
+			/*   dropshadow styles		*/
+			.ddShadow {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+			}
+			li ul .ddShadow {
+				/*top: -2.1em;
+				left: 10em;*/
+			}
+			.ddShadow-upperRight {
+				position: absolute;
+				right: -8px;
+				top: 0;
+				width: 8px;
+				height: 8px;
+				background: url(upperrightfade.png) right top no-repeat;
+			}
+			.ddShadow-lowerLeft {
+				position: absolute;
+				left: 0;
+				bottom: -8px;
+				width: 8px;
+				height: 8px;
+				background: url(lowerleftfade.png) left bottom no-repeat;
+			}
+			.ddShadow-shadow {
+				position: absolute;
+				right: -8px;
+				bottom: -8px;
+				width: 100%;
+				height: 100%;
+				background: url(shadow.png) bottom right;
+			}
+			
+		</style>
+		<script type="text/javascript" src="../mootools-1.2.1-core-nc.js"></script>
+		<script type="text/javascript" src="../utils.js"></script>
+		<script type="text/javascript">
+			window.addEvent('domready', function() {
+				new dropdowns('nav1');
+			});
+		</script>
+	</head>
+	<body>
+		<ul id="nav1">
+			<li><a href='#'>item 1</a></li>
+			<li><a href='#'>item 2</a>
+				<ul>
+					<li><a href='#'>item 2a</a></li>
+					<li><a href='#'>item 2b</a>
+						<ul>
+							<li><a href='#'>item 2b.i</a></li>
+							<li><a href='#'>item 2b.ii</a></li>
+						</ul>
+					</li>
+					<li><a href='#'>item 2c</a>
+						<ul>
+							<li><a href='#'>item 2c.i</a></li>
+							<li><a href='#'>item 2c.ii</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href='#'>item 3</a>
+				<ul>
+					<li><a href='#'>item 3a</a></li>
+					<li><a href='#'>item 3b</a>
+						<ul>
+							<li><a href='#'>item 3b.i</a></li>
+							<li><a href='#'>item 3b.ii</a></li>
+						</ul>
+					</li>
+					<li><a href='#'>item 3c</a>
+						<ul>
+							<li><a href='#'>item 3c.i</a></li>
+							<li><a href='#'>item 3c.ii</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href='#'>item 4</a></li>
+		</ul>
+	</body>
+</html>

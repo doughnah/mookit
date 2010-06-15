@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Fx.Slide</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../fx/fx.slide.js"></script>
+
+<script type="text/javascript">
+	var basicSlide = {};
+	var advancedSlide = {};
+	window.addEvent('domready', function(){
+		basicSlide = new Fx.Slide('basicSlide').hide();
+		advancedSlide = new Fx.Slide('advancedSlide', {onComplete:function(){
+			$('status').set('text', 'open: '+this.open);
+		},
+		mode: 'horizontal'
+		}).hide();
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Fx.Slide</h2>
+		<a class="view" href="http://docs.mootools.net/Plugins/Fx.Slide">view docs</a><p class="version">version 1.0</p>
+		<p class="description">The slide effect slides an Element in horizontally or vertically. The contents will fold inside.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>horizontal or vertical slides</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<a href="javascript:;" onclick="basicSlide.toggle()">toggle</a>
+			<div id="basicSlide">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam scelerisque ante nec est. Curabitur fringilla porta justo. Vivamus tincidunt magna at eros. Etiam elit erat, lobortis non, fringilla vel, varius interdum, ipsum. Fusce dictum tortor quis ante. In dictum, nisi vitae eleifend mollis, massa erat ultrices elit, vel facilisis felis dolor id nunc. Praesent mattis tellus at odio. Ut eu augue. Phasellus iaculis, magna non bibendum porta, diam erat adipiscing dolor, feugiat cursus sapien felis vel purus. Nulla pharetra, quam eget ultricies congue, urna est egestas nibh, nec sodales urna lorem pellentesque erat.</div>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<a href="javascript:;" onclick="advancedSlide.toggle()">toggle</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="status">open: false</span>
+			<div id="advancedSlide">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam scelerisque ante nec est. Curabitur fringilla porta justo. Vivamus tincidunt magna at eros. Etiam elit erat, lobortis non, fringilla vel, varius interdum, ipsum. Fusce dictum tortor quis ante. In dictum, nisi vitae eleifend mollis, massa erat ultrices elit, vel facilisis felis dolor id nunc. Praesent mattis tellus at odio. Ut eu augue. Phasellus iaculis, magna non bibendum porta, diam erat adipiscing dolor, feugiat cursus sapien felis vel purus. Nulla pharetra, quam eget ultricies congue, urna est egestas nibh, nec sodales urna lorem pellentesque erat.</div>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

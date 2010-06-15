@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : overlay</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css" media="screen">
+	
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/overlay.js"></script>
+
+<script type="text/javascript">
+	var basicOverlay = {};
+	var advancedOverlay = {};
+	
+	window.addEvent('domready', function(){
+		basicOverlay = new overlay({
+			_onClick: function(){
+				this.hide();
+			}
+		});
+		
+		advancedOverlay = new overlay({
+			colour: '#00FF00',
+			opacity: 0.8,
+			_onClick: function(){
+				if(confirm('Would you like to turn off this overlay?')){
+					this.hide();
+				}
+			}
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>overlay</h2>
+		<a class="view" href="../_docs/overlay.htm">view docs</a><p class="version">version 1.2</p>
+		<p class="description">covers the window with a semi-transparent layer.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>specify a colour.</li>
+				<li>specify an opacity level.</li>
+				<li>specify a container.</li>
+				<li>has an onClick event.</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<a href="javascript:;" onclick="basicOverlay.show()">show default</a>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<a href="javascript:;" onclick="advancedOverlay.show()">show custom</a>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

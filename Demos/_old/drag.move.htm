@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Drag.Move</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+<style type="text/css" media="screen">
+	#container {
+		position: relative;
+	}
+	.drag {
+		width: 30px;
+		height: 30px;
+		background-color: #607293;
+		color: #fff;
+		font-size: 1em;
+		font-weight: bold;
+		padding: 10px;
+		cursor: move;
+		z-index: 1;
+	}
+	
+	#advanced .drag {
+		margin: 60px;
+	}
+	
+	.cont {
+		width: 170px;
+		height: 170px;
+		margin-right: 20px;
+		float: left;
+		position: relative;
+		border: 1px solid #ababab;
+	}
+	.in {
+		background-color: #ababab;
+	}
+	.clear {
+		clear: both;
+	}
+	
+</style>
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../drag/drag.js"></script>
+<script type="text/javascript" src="../drag/drag.move.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var basicDrag = new Drag.Move('basicDrag');
+		
+		var advancedDrag = new Drag.Move('adDrag', {
+			droppables: '.cont',
+			onDrop: function(el, drop){
+				el.setStyles({
+					top: 0,
+					left: 0
+				})
+				if(drop){
+					el.inject(drop);
+					drop.removeClass('in');
+				}
+			},
+			onEnter: function(el, drop){
+				drop.addClass('in');
+			},
+			onLeave: function(el, drop){
+				drop.removeClass('in');
+			}
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Drag.Move</h2>
+		<a class="view" href="http://docs.mootools.net/Plugins/Drag.Move">view docs</a><p class="version">version 1.0</p>
+		<p class="description">An extension to the base Drag class with additional functionality for dragging an Element. Supports snapping and droppables</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>drop into containers</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<div id="basicDrag" class="drag">drag me!</div>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<div class="cont"><div id="adDrag" class="drag">drag me!</div></div>
+			<div class="cont"></div>
+			<div class="cont"></div>
+		</div>
+		<div class="clear"></div>
+
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

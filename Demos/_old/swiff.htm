@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Swiff</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css" media="screen">
+	
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../Swiff/Swiff.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var basicObj = new Swiff('../_img/_demo/curly.swf', {
+		    container: 'basic',
+		    width: 320,
+		    height: 240,
+		    params: {
+		        wMode: 'opaque',
+		        bgcolor: '#FFFFFF'
+		    },
+		    vars: {
+		        myName: 'sam'
+		    }
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Swiff</h2>
+		<a class="view" href="../_docs/swiff.htm">view docs</a><p class="version">version 1.0</p>
+		<p class="description">Creates and returns a Flash object with version checking.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>replaces the contents of a div with the embeded flash.</li>
+				<li>version checking.</li>
+				<li>add parameters to the flash object.</li>
+				<li>add properties to the flash object.</li>
+				<li>pass in variables to the flash movie.</li>
+				<li>built in javascript/actionscript communication gateway.</li>
+			</ul>
+		</div>
+		
+		<h3>example</h3>
+		<div id="basic">
+			<p>Flash player 8 or above is required to view this content.</p>
+		</div>
+
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

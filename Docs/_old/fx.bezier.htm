@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Fx.Bezier</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Fx.Bezier</h2>
+		<p class="version">version 1.0</p>
+		<p class="description">bezier transition</p>
+		<p>Inherits methods, properties, options and events from <a href="http://docs.mootools.net/Fx/Fx.Morph">Fx.Morph</a></p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var myFx = new Fx.Bezier(element [, options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>element - (mixed) A string ID of the Element or an Element to apply the style transitions to.</li>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>styles</dt>
+			<dd>(object) the styles which represent the x and y movement. Default: {x:'left', y:'top'}</dd>
+			
+			<dt>controls</dt>
+			<dd>(array) upto 3 objects specify the x & y control points for the curve. (e.g. [{x:100, y:100}])</dd>
+		</dl>
+		<p>plus Fx.Morph options</p>
+		
+		<h3>events:</h3>
+		<p>see Fx.Morph events</p>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new Fx.Bezier instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/fx.bezier.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var myFx = new Fx.Bezier($('myDiv'), {
+	duration: 1500, 
+	transition: Fx.Transitions.Sine.easeInOut, 
+	controls: [{x:360,y:-300},{x:360,y:600}]
+})
+
+myFx.start({top: [100,400], left: [100,400]});
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Accordion</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+<style type="text/css" media="screen">
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		margin-bottom: 2px;
+	}
+	.tog {
+		display: block;
+		background: #797979;
+		padding: 5px;
+		color: #fff;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.cont p {
+		padding-bottom: 20px;
+		padding-top: 10px;
+	}
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../fx/fx.elements.js"></script>
+<script type="text/javascript" src="../interface/accordion.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		new Accordion($$('#basic .tog'), $$('#basic .cont'));
+		
+		new Accordion($$('#advanced .tog'), $$('#advanced .cont'), {
+			display: null,
+			alwaysHide: true,
+			onActive: function(toggler, element){
+				toggler.setStyle('background', '#607293');
+			},
+			onBackground: function(toggler, element){
+				toggler.setStyle('background', '#797979');
+			}
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Accordion</h2>
+		<a class="view" href="http://mootools.net/docs/Plugins/Accordion">view docs</a><p class="version">version 1.0</p>
+		<p class="description">The Accordion class creates a group of Elements that are toggled when their handles are clicked. When one Element toggles into view, the others toggle out.</p>
+		
+		
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<ul>
+				<li>
+					<span class="tog">item 1</span>
+					<div class="cont"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin magna mauris, fermentum eu, faucibus porta, adipiscing non, nulla. Suspendisse vitae diam ut nisl auctor sagittis. Morbi at enim at enim pellentesque eleifend. Vivamus lacus ante, ullamcorper eu, molestie quis, venenatis vitae, felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pellentesque pulvinar velit. Etiam lectus urna, bibendum quis, vulputate id, gravida eget, sapien. Mauris ac mi vel orci porta fringilla. Sed quis diam. Proin dictum. Nam commodo neque non nisi blandit accumsan. Quisque adipiscing est eget lacus. Proin vel nisi. Sed mattis risus ut mi. Morbi dolor. Nam sodales neque vitae lorem. Maecenas mi. Aliquam nisl. Nunc eget ante. Etiam felis.
+			</p></div>
+				<li>
+				<li>
+					<span class="tog">item 2</span>
+					<div class="cont"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin magna mauris, fermentum eu, faucibus porta, adipiscing non, nulla. Suspendisse vitae diam ut nisl auctor sagittis. Morbi at enim at enim pellentesque eleifend. Vivamus lacus ante, ullamcorper eu, molestie quis, venenatis vitae, felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pellentesque pulvinar velit. Etiam lectus urna, bibendum quis, vulputate id, gravida eget, sapien. Mauris ac mi vel orci porta fringilla. Sed quis diam. Proin dictum. Nam commodo neque non nisi blandit accumsan. Quisque adipiscing est eget lacus. Proin vel nisi. Sed mattis risus ut mi. Morbi dolor. Nam sodales neque vitae lorem. Maecenas mi. Aliquam nisl. Nunc eget ante. Etiam felis.
+			</p></div>
+				<li>
+					<li>
+					<span class="tog">item 3</span>
+					<div class="cont"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin magna mauris, fermentum eu, faucibus porta, adipiscing non, nulla. Suspendisse vitae diam ut nisl auctor sagittis. Morbi at enim at enim pellentesque eleifend. Vivamus lacus ante, ullamcorper eu, molestie quis, venenatis vitae, felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pellentesque pulvinar velit. Etiam lectus urna, bibendum quis, vulputate id, gravida eget, sapien. Mauris ac mi vel orci porta fringilla. Sed quis diam. Proin dictum. Nam commodo neque non nisi blandit accumsan. Quisque adipiscing est eget lacus. Proin vel nisi. Sed mattis risus ut mi. Morbi dolor. Nam sodales neque vitae lorem. Maecenas mi. Aliquam nisl. Nunc eget ante. Etiam felis.
+			</p></div>
+				<li>
+			</ul>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<ul>
+				<li>
+					<span class="tog">item 1</span>
+					<div class="cont"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin magna mauris, fermentum eu, faucibus porta, adipiscing non, nulla. Suspendisse vitae diam ut nisl auctor sagittis. Morbi at enim at enim pellentesque eleifend. Vivamus lacus ante, ullamcorper eu, molestie quis, venenatis vitae, felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pellentesque pulvinar velit. Etiam lectus urna, bibendum quis, vulputate id, gravida eget, sapien. Mauris ac mi vel orci porta fringilla. Sed quis diam. Proin dictum. Nam commodo neque non nisi blandit accumsan. Quisque adipiscing est eget lacus. Proin vel nisi. Sed mattis risus ut mi. Morbi dolor. Nam sodales neque vitae lorem. Maecenas mi. Aliquam nisl. Nunc eget ante. Etiam felis.
+			</p></div>
+				<li>
+				<li>
+					<span class="tog">item 2</span>
+					<div class="cont"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin magna mauris, fermentum eu, faucibus porta, adipiscing non, nulla. Suspendisse vitae diam ut nisl auctor sagittis. Morbi at enim at enim pellentesque eleifend. Vivamus lacus ante, ullamcorper eu, molestie quis, venenatis vitae, felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pellentesque pulvinar velit. Etiam lectus urna, bibendum quis, vulputate id, gravida eget, sapien. Mauris ac mi vel orci porta fringilla. Sed quis diam. Proin dictum. Nam commodo neque non nisi blandit accumsan. Quisque adipiscing est eget lacus. Proin vel nisi. Sed mattis risus ut mi. Morbi dolor. Nam sodales neque vitae lorem. Maecenas mi. Aliquam nisl. Nunc eget ante. Etiam felis.
+			</p></div>
+				<li>
+					<li>
+					<span class="tog">item 3</span>
+					<div class="cont"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin magna mauris, fermentum eu, faucibus porta, adipiscing non, nulla. Suspendisse vitae diam ut nisl auctor sagittis. Morbi at enim at enim pellentesque eleifend. Vivamus lacus ante, ullamcorper eu, molestie quis, venenatis vitae, felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pellentesque pulvinar velit. Etiam lectus urna, bibendum quis, vulputate id, gravida eget, sapien. Mauris ac mi vel orci porta fringilla. Sed quis diam. Proin dictum. Nam commodo neque non nisi blandit accumsan. Quisque adipiscing est eget lacus. Proin vel nisi. Sed mattis risus ut mi. Morbi dolor. Nam sodales neque vitae lorem. Maecenas mi. Aliquam nisl. Nunc eget ante. Etiam felis.
+			</p></div>
+				<li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

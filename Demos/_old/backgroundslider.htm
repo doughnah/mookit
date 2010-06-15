@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : backgroundSlider</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css" media="screen">
+	.box1 {
+		background-color: #CAC9B9;
+		width: 50px;
+		height: 50px;
+		float: left;
+	}
+	.box2 {
+		background-color: #CAC9B9;
+		width: 250px;
+		height: 50px;
+		float: left;
+		margin-left: 50px;
+	}
+	.box3 {
+		background-color: #CAC9B9;
+		width: 150px;
+		height: 50px;
+		float: left;
+		margin-left: 50px;
+	}
+	.outline {
+		border: 1px solid orange;
+	}
+	#log {
+		margin-top: 10px;
+	}
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/backgroundSlider.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var basic = new backgroundSlider($$('#basic .box'), {className: 'outline'});
+		
+		var advanced = new backgroundSlider($$('#advanced .box'), {
+			className: 'outline', 
+			start: 2,
+			_onClick: function(el){
+				$('log').set('html', 'Element clicked: '+el.className)
+			}
+			});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>backgroundSlider</h2>
+		<a class="view" href="../_docs/backgroundslider.htm">view docs</a><p class="version">version 1.3</p>
+		<p class="description">slides a layer to a given elements position and dimensions.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>padding control</li>
+				<li>fix the height and width</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<div class="box box1"></div>
+			<div class="box box2"></div>
+			<div class="box box3"></div>
+			<div class="clear"></div>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<div class="box box1"></div>
+			<div class="box box2"></div>
+			<div class="box box3"></div>
+			<div class="clear"></div>
+			<div id="log"></div>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

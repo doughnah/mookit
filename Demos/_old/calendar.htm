@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Page Title</title>
+
+		<style type="text/css">
+			/* {
+				margin: 0;
+				padding: 0;
+			}*/
+			body {
+				font-family: tahoma, arial, helvetica;
+				font-size: 76%;
+				color: #000;
+				font-weight: normal;
+				padding: 100px;
+			}
+			
+			.container {
+				width: 600px;
+				position: relative;
+				margin: auto;
+			}
+			
+			.calendarContainer * {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.calendarContainer {
+				position: relative;
+				width: 162px;
+				height: 170px;
+				overflow: hidden;
+				/*border: 1px solid red;*/
+			}
+			
+			.calendarHeader
+			 {
+			 height: 22px;
+			 position: absolute;
+			 z-index: 5;
+			 color: #484a54;
+			 background: #dcdfe1 url(/assets/calendar/name-bg.gif) repeat-x 0 0;
+			 }
+			.calendarHeader span.left
+			 {
+			 display: block;
+			 background: url(/assets/calendar/arrow-left.gif) no-repeat 0 0;
+			 width: 22px;
+			 height: 22px;
+			 float: left;
+			 cursor: pointer;
+			 }
+			.calendarHeader span.right
+			 {
+			 display: block;
+			 background: url(/assets/calendar/arrow-right.gif) no-repeat 0 0;
+			 width: 22px;
+			 height: 22px;
+			 float: right;
+			 cursor: pointer;
+			 }
+			.calendarHeader span.title
+			 {
+			 display: block;
+			 width: 118px;
+			 font-size: 13px;
+			 font-weight: bold;
+			 text-align: center;
+			 float: left;
+			 padding-top: 3px;
+			 cursor: pointer;
+			 }
+			
+			.calendar {
+				width: 162px;
+				height: 170px;
+			}
+			.calendar table
+			 {
+			 background: #d7dcdf;
+			 }
+			
+			
+			.calendar table.date th 
+			 {
+			 width: 20px;
+			 height: 20px;
+			 background: #dcdfe2 url(/assets/calendar/header-bg.gif) repeat-x 0 0;
+			 font-size: 8px;
+			 font-weight: normal;
+			 }
+			.calendar table.date td
+			 {
+			 width: 22px;
+			 height: 20px;
+			 text-align: center;
+			 font-size: 10px;
+			 border-top: white solid 1px;
+			 }
+			
+			.calendar table.date td:hover
+			 {
+			 cursor: pointer;
+			 font-weight: bold;
+			 background: url(/assets/calendar/date-bg.gif) no-repeat 0 -23px;
+			 border-top: none;
+			 }
+			.calendar table.date td.today
+			 {
+			 font-weight: bold;
+			 }
+			.calendar table.date td.selected
+			 {
+			 color: white;
+			 font-weight: bold;
+			 background: url(/assets/calendar/date-bg.gif) no-repeat 0 -46px;
+			 border-top: none;
+			 }
+			.calendar table.date td.blocked
+			 {
+			 color: #b80808;
+			 cursor: not-allowed;
+			 }
+			.calendar table.date td.blocked:hover
+			 {
+			 background-image: none;
+			 border-top: white solid 1px;
+			 font-weight: normal;
+			 }
+			
+			.calendar table.date td.past, .calendar table.date td.future 
+			 {
+			 color: #c3c5c7;
+			 }
+			.calendar table.date td.past:hover, .calendar table.date td.future:hover 
+			 {
+			 color: #000;
+			 }
+			.calendar table.date td[class="past selected"]:hover, .calendar table.date td[class="future selected"]:hover 
+			 {
+			 color: white;
+			 }
+			.calendar table.date td[class="past blocked"]:hover, .calendar table.date td[class="future blocked"]:hover 
+			 {
+			 color: #b80808;
+			 }
+			
+			
+			.calendar table.month td
+			 {
+			 width: 39px;
+			 height: 48px;
+			 text-align: center;
+			 font-size: 11px;
+			 border-top: white solid 1px;
+			 }
+			.calendar table.month td:hover
+			 {
+			 cursor: pointer;
+			 font-weight: bold;
+			 background: #b80808 url(/assets/calendar/month-bg.gif) no-repeat 0 -53px;
+			 border-top: none;
+			 }
+			.calendar table.month td.selected
+			 {
+			 font-weight: bold;
+			 background: #b80808 url(/assets/calendar/month-bg.gif) no-repeat 0 -106px;
+			 border-top: none;
+			 }
+			
+			
+			.calendarIcon {
+				width: 14px;
+				height: 14px;
+				padding-left: 14px;
+				margin-left: 10px;
+				background: url(/assets/calendar/calendaricon.gif) no-repeat;
+				cursor: pointer;
+			}
+			
+			.row1 td
+			 {
+			 background: #f0f0f2;
+			 }
+			.row2 td
+			 {
+			 background: #edeef0;
+			 }
+			.row3 td
+			 {
+			 background: #ebedee;
+			 }
+			.row4 td
+			 {
+			 background: #e8eaeb;
+			 }
+			.row5 td
+			 {
+			 background: #e6e7e9;
+			 }
+			.row6 td
+			 {
+			 background: #e3e5e7;
+			 }
+			
+			
+		</style>
+		<!--[if IE]>
+		<style type="text/css">
+			.calendar table.date td
+			 {
+			 height: 19px;
+			 }
+		</style>
+		<![endif]-->
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+		<script type="text/javascript" src="/source/native/date.extras.js"></script>
+		<script type="text/javascript" src="/source/interface/calendar.js"></script>
+		<script type="text/javascript" src="/source/interface/datepicker.js"></script>
+		<script type="text/javascript">
+			window.addEvent('domready', function(){
+				var picker = new DatePicker({
+					input: 'date',
+					format: 'dd/mm/yyyy',
+					container: $$('.container')[0]
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<!--
+		<div class="calendar">
+			<div class="calendarHeader">
+				<span class="left"></span><span class="title">December 2008</span><span class="right"></span>
+			</div>
+		     <table cellspacing="1" class="date">
+		      <tr>
+		       <th scope="col">Mon</th>
+		       <th scope="col">Tue</th>
+		       <th scope="col">Wed</th>
+		       <th scope="col">Thu</th>
+		       <th scope="col">Fri</th>
+		       <th scope="col">Sat</th>
+		       <th scope="col">Sun</th>
+		      </tr>
+		      <tr class="row1"><td class="past">24</td><td class="past">25</td><td class="past">26</td><td class="past">27</td><td class="past">28</td><td class="past">29</td><td class="past">30</td></tr>
+		      <tr class="row2"><td class="">1</td><td class="">2</td><td class="">3</td><td class="">4</td><td class="">5</td><td class="">6</td><td class="">7</td></tr>
+		      <tr class="row3"><td class="">8</td><td class="">9</td><td class="selected">10</td><td class="">11</td><td class="">12</td><td class="">13</td><td class="">14</td></tr>
+		      <tr class="row4"><td class="">15</td><td class="">16</td><td class="">17</td><td class="">18</td><td class="">19</td><td class="">20</td><td class="">21</td></tr>
+		      <tr class="row5"><td class="">22</td><td class="">23</td><td class="">24</td><td class="">25</td><td class="">26</td><td class="">27</td><td class="">28</td></tr>
+		      <tr class="row6"><td class="">29</td><td class="">30</td><td class="">31</td><td class="future">1</td><td class="future">2</td><td class="future">3</td><td class="future">4</td></tr>
+		     </table>
+		</div>
+		
+		
+			<div class="calendar">
+				<div class="calendarHeader">
+					<span class="left"></span><span class="title">2008</span><span class="right"></span>
+				</div>
+			     <table cellspacing="1" class="month">
+			      <tr class="row1">
+					<td class="">Jan</td>
+					<td class="">Feb</td>
+					<td class="">Mar</td>
+					<td class="">Apr</td>
+				  </tr>
+			      <tr class="row2">
+					<td class="">May</td>
+					<td class="">Jun</td>
+					<td class="">Jul</td>
+					<td class="">Aug</td>
+				  </tr>
+				  <tr class="row3">
+					<td class="">Sep</td>
+					<td class="">Oct</td>
+					<td class="">Nov</td>
+					<td class="selected">Dec</td>
+				  </tr>
+			     </table>
+			</div>
+		-->
+		<div class="container">
+		<input type="text" id="date" name="date" value="">
+		<p>some text...</p>
+		</div>
+	</body>
+</html>

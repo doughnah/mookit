@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : sortableTable</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>sortableTable</h2>
+		<p class="version">version 1.4</p>
+		<p class="description">column sorting and row filtering on tables</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var table = new sortableTable(el [, options]);</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>el - (mixed, element or string)</li>
+			<li>options - (object, optional)</li>
+		</ol>
+
+		<h3>options:</h3>
+		<dl>
+			<dt>overCls</dt>
+			<dd>(string) the classname for the row when the mouse is over it. Default: false</dd>
+			
+			<dt>sortOn</dt>
+			<dd>(number) which column to initially sort on (zero-based). Default: 0</dd>
+			
+			<dt>sortBy</dt>
+			<dd>(string) which direction to initially sort on (ASC / DESC). Default: ASC</dd>
+			
+			<dt>filter<dt>
+			<dd>(boolean) adds the filtering options above the table. Default: true</dd>
+			
+			<dt>filterHide</dt>
+			<dd>(boolean) when filtering, show only the matches, hide the rest. Default: true</dd>
+			
+			<dt>height</dt>
+			<dd>(number) fixed the height of the table, overflow will be scrolled. Default: false</dd>
+			
+			<dt>linkId</dt>
+			<dd>(number) the column number in which the a href link is (zero-based). Default: 0</dd>
+		</dl>
+		
+		<h3>events:</h3>
+		<dl>
+			<dt>onClick</dt>
+			<dd>function to call when the row is clicked. Passed: url</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new sortableTable instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/sortabletable.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var table = new sortableTable($('myTable'), {
+	overCls: 'overRow',
+	sortOn: 1, // 2nd column (date)
+	sortBy: 'DESC', // latest first
+	onClick: function(url){
+		alert(this.id);
+		alert(url);
+	}
+})
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+				<li>date-en-gb</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

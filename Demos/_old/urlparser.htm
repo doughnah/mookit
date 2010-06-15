@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : urlParser</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/urlparser.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var myUrl = parseUrl(document.URL);
+		var text = '';
+		for(item in myUrl){
+			text += item+' : '+myUrl[item]+'<br>';
+		}
+		$('basic').set('html', text);
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>urlParser</h2>
+		<a class="view" href="../_docs/urlparser.htm">view docs</a><p class="version">version 1.0</p>
+		<p class="description">splits any well-formed URL.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>breaks well-formed urls into: source, protocol, authority, domain, port, path, directoryPath, fileName, query, anchor</li>
+			</ul>
+		</div>
+		
+		<h3>example</h3>
+		<div id="basic">
+			
+		</div>
+
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

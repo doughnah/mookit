@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Fx.Parallax</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Fx.Parallax</h2>
+		<p class="version">version 1.0</p>
+		<p class="description">add parallax control to the page.</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>var para = new Fx.Parallax();</code></pre>
+		
+		<h3>methods:</h3>
+		<dl>
+			<dt>add</dt>
+			<dd><h4>arguments:</h4>
+					<ol>
+						<li>elements - (mixed, css selector or array) </li>
+						<li>options - (object, optional)</li>
+					</ol>
+					<h4>options:</h4>
+					<dl>
+						<dt>limit</dt>
+						<dd>(object) the amount in pixels of the maximum movement. (default: {w:100, h:100})</dd>
+						<dt>styles</dt>
+						<dd>(object) which styles should be used for the x & y movement. (default: {x: 'margin-left', y:'top'})</dd>
+						<dt>level</dt>
+						<dd>(number) which level of the parallax to add the elements too.</dd>
+					</dl>
+			</dd>
+			
+			<dt>remove</dt>
+			<dd><h4>arguments:</h4>
+					<ol>
+						<li>el - (element) will remove the element in the specified level from the parallax.</li>
+						<li>level - (number) specifies the level from which the element should be removed, if the element is null then the entire level is removed.</li>
+					</ol>
+			</dd>
+		</dl>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) a new Fx.Parallax instance.</li>
+		</ul>
+		
+		<h3><a href="../_demos/index.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var para = new Fx.Parallax();
+para.add([$('header')]);
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+			<ul>
+				<li>mootools v1.2 core</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

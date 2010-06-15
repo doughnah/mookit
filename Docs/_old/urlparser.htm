@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : urlParser</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>urlParser</h2>
+		<p class="version">version 1.0</p>
+		<p class="description">splits any well-formed URL.</p>
+		
+		
+		<h3>syntax:</h3>
+		<pre><code>parseUrl(url)</code></pre>
+		
+		<h3>arguments:</h3>
+		<ol>
+			<li>url - (string)</li>
+		</ol>
+		
+		<h3>returns:</h3>
+		<ul>
+			<li>(object) containing: (source, protocol, authority, domain, port, path, directoryPath, fileName, query, anchor)</li>
+		</ul>
+		
+		<h3><a href="../_demos/index.htm">view demo</a>example:</h3>
+		<h4>JavaScript</h4>
+		<pre><code>
+var myUrl = parseUrl('http://platform.mandogroup.com/index.htm#javascript');
+alert(myUrl.anchor);
+		</code></pre>
+		
+		<h3>requirements:</h3>
+		<div>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

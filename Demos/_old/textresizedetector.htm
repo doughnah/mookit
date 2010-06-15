@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : textResizeDetector</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css" media="screen">
+	
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../utilities/textResizeDetector.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		new textResizeDetector({
+			_onChange: function(){
+				$('basic').set('html', 'text changed')
+			}
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>textResizeDetector</h2>
+		<a class="view" href="../_docs/textresizedetector.htm">view docs</a><p class="version">version 1.0</p>
+		<p class="description">captures when the text is resized.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>call a function when the text has been resized.</li>
+			</ul>
+		</div>
+		
+		<h3>example</h3>
+		<div id="basic">
+			Resize the text
+		</div>
+	
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

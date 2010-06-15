@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Untitled Document</title>
+
+		<script type="text/javascript" src="../mootools-1.2-core-nc.js"></script>
+		<script type="text/javascript" src="../mootools-1.2-more-nc.js"></script>
+		<script type="text/javascript" src="../utils.js"></script>
+
+		<style type="text/css">
+
+
+			.summary {
+				font-family: Tahoma, Arial, Helvetica, sans-serif;
+				font-size: 0.7em;
+				padding: 10px 0;
+			}
+
+			.progress {
+				font-family: Tahoma, Arial, Helvetica, sans-serif;
+				font-size: 0.7em;
+			}
+
+			.progress .bar {
+
+			}
+
+			.progress .percent {
+
+			}
+
+			.progress .size {
+				display: block;
+			}
+
+			.progress .bar img {
+				background:				white url(../fancyupload2/progress.gif) no-repeat;
+				background-position:	+50% 0;
+				margin-right:			0.5em;
+			}
+
+			.showHide {
+				font-family: Tahoma, Arial, Helvetica, sans-serif;
+				font-size: 0.7em;
+				padding: 10px 0;
+			}
+			.showHide a {
+				text-decoration: none;
+			}
+			.showHide a:hover {
+				text-decoration: underline;
+			}
+
+			ul.fileList {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				font-family: Tahoma, Arial, Helvetica, sans-serif;
+				font-size: 0.7em;
+				width: 250px;
+				border-top: 1px solid #dedede;
+			}
+
+			ul.fileList li {
+				border-bottom: 1px solid #dedede;
+				padding: 5px 0;
+			}
+
+			ul.fileList li .size {
+				float: right;
+			}
+			ul.fileList li .remove {
+				float: right;
+				text-decoration: none;
+			}
+			ul.fileList li .status {
+				display: block;
+				color: #aaa;
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+<form action="upload.php" method="post" enctype="multipart/form-data" id="form-demo">
+
+
+
+	<input type="file" id="myImages" fileTypes="jpg,jpeg,gif,png" />
+
+	<div id="myImages_EzUpload">
+		<input type="hidden" class="hiddenFiles" name="myImages" />
+		<input type="button" class="browse" value="Browse..." />
+		<input type="button" class="upload" value="Upload" />
+		<div class="summary">Click browse to add files to upload.</div>
+		<div class="progress">
+			<span class="bar"><img src="../fancyupload2/bar.gif" /></span>
+			<span class="percent">0%</span>
+			<span class="size">0 / 0</span>
+		</div>
+		<div class="showHide"><a href="#" onclick="showHideFiles.toggle();">show/hide files</a></div>
+		<div class="fileListContainer">
+			<ul class="fileList">
+				<li class="file">
+					<span class="size"></span>
+					<span class="name">No files queued</span>
+					<a href="#" class="remove">Remove [x]</a>
+					<span class="status"></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var showHideFiles = new Fx.Slide($('myImages_EzUpload').getElement('.fileListContainer')).hide();
+		new EzUploader({
+			OnAddFile: function(){
+				if(showHideFiles.open){
+					showHideFiles.show();
+				}
+			}
+		});
+	</script>
+
+</form>
+
+	</body>
+</html>

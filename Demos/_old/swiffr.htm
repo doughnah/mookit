@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Swiffr</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<style type="text/css" media="all">
+	#basic p {
+		font-size: 2em;
+		letter-spacing: 1.3px;
+	}
+	#basic p.Swiffr {
+		font-size: 2em;
+		letter-spacing: -0.2px;
+	}
+	span.Swiffr {
+		margin-left: -1000em;
+		/*display: block;*/
+		position: absolute;
+		visibility: hidden;
+	}
+</style>
+
+<style type="text/css" media="print">
+	object.Swiffr {
+		display: none;
+	}
+	span.Swiffr {
+		visibility: visible;
+		margin-left: auto;
+		position: relative;
+	}
+</style>
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../Utilities/elReady.js"></script>
+<script type="text/javascript" src="../Swiff/Swiff.js"></script>
+<script type="text/javascript" src="../Utilities/uTRD.js"></script>
+<script type="text/javascript" src="../Swiff/Swiffr.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var txtResizer = new uTRD({base: 11});
+		new Swiffr('#basic p', {
+			font: '../_img/_demo/titles.swf', 
+			size: 20,
+			resizer:txtResizer
+		});
+	});
+	
+	window.addEvent('domready', function(){
+		$(document.body).fade('in');
+		
+		/* if your swf are embeded with a transparent background then use this:
+		
+		if(Browser.Engine.trident){
+			$(document.body).fade('show');
+		}else{
+			$(document.body).fade('in');
+		}
+		*/
+	});
+	
+	
+</script>
+
+</head>
+<body>
+<script type="text/javascript" charset="utf-8">
+	$(document.body).fade('hide');
+</script>
+	<div id="container">
+			
+		
+		
+		<h2>Swiffr</h2>
+		<a class="view" href="../_docs/swiff.htm">view docs</a><p class="version">version 1.0</p>
+		<p class="description">Creates and returns a Flash object with version checking.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>replaces the contents of a div with the embeded flash.</li>
+				<li>version checking.</li>
+				<li>add parameters to the flash object.</li>
+				<li>add properties to the flash object.</li>
+				<li>pass in variables to the flash movie.</li>
+				<li>built in javascript/actionscript communication gateway.</li>
+			</ul>
+		</div>
+		
+		<h3>example</h3>
+		<div id="basic">
+			<p>Flash player 8 or above is required to view this content.</p>
+		</div>
+
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

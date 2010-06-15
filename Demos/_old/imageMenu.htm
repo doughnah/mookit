@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : imageMenu</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+
+<link rel="stylesheet" href="../_css/imageMenu.css" type="text/css" media="all">
+
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../fx/fx.elements.js"></script>
+<script type="text/javascript" src="../interface/imageMenu.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var basicMenu = new ImageMenu($$('#imageMenuBasic a'),{
+			openWidth:310, 
+			border:2
+		});
+		
+		var advancedMenu = new ImageMenu($$('#imageMenuAdvanced a'),{
+			openWidth:310, 
+			border:2,
+			open: 1,
+			OnOpen: function(el, i){
+				$('log').set('html', 'menu item <b>opened</b>: <br>link: {element} <br>this is number {num} in the list'.substitute({element: el, num: (i+1)}));
+			},
+			OnClose: function(el, i){
+				$('log').set('html', 'menu item <b>closed</b>: <br>link: {element}  <br>this is number {num} in the list'.substitute({element: el, num: (i+1)}));
+			},
+			OnClickOpen: function(el, i){
+				$('log').set('html', 'menu item <b>clicked open</b>: <br>link: {element}  <br>this is number {num} in the list'.substitute({element: el, num: (i+1)}));
+			},	
+			OnClickClose: function(el, i){
+				$('log').set('html', 'menu item <b>clicked close</b>: <br>link: {element}  <br>this is number {num} in the list'.substitute({element: el, num: (i+1)}));
+			}		
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>imageMenu</h2>
+		<a class="view" href="../_docs/imageMenu.htm">view docs</a><p class="version">version 2.3</p>
+		<p class="description">horizontal menu, reveals more of the image as you rollover it.</p>
+		
+		
+		
+		<h3>features</h3>
+		<div>
+			<ul>
+				<li>2 optional onClick events - open & close</li>
+				<li>href passed to onClick events</li>
+				<li>stays open when clicked</li>
+				<li>closes when clicked</li>
+				<li>select item to pre-open</li>
+			</ul>
+		</div>
+		
+		<h3>basic example</h3>
+		<div>
+			<div id="imageMenuBasic" class="imageMenu">
+			<ul>
+				<li class="landscapes"><a href="http://www.aaronbirchphotography.com">Landscapes</a></li>
+				<li class="people"><a href="http://www.aaronbirchphotography.com">People</a></li>
+				<li class="nature"><a href="http://www.aaronbirchphotography.com">Nature</a></li>
+				<li class="urban"><a href="http://www.aaronbirchphotography.com">Urban</a></li>
+				<li class="abstract"><a href="http://www.aaronbirchphotography.com">Abstract</a></li>
+			</ul>
+			</div>
+		</div>
+		
+		<h3>advanced example</h3>
+		<div>
+			<div id="imageMenuAdvanced" class="imageMenu">
+			<ul>
+				<li class="landscapes"><a href="http://www.aaronbirchphotography.com">Landscapes</a></li>
+				<li class="people"><a href="http://www.aaronbirchphotography.com">People</a></li>
+				<li class="nature"><a href="http://www.aaronbirchphotography.com">Nature</a></li>
+				<li class="urban"><a href="http://www.aaronbirchphotography.com">Urban</a></li>
+				<li class="abstract"><a href="http://www.aaronbirchphotography.com">Abstract</a></li>
+			</ul>
+			</div>
+			<div id="log">&nbsp;</div>
+		</div>
+		
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

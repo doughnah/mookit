@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Page Title</title>
+
+		<style type="text/css">
+			/* {
+				margin: 0;
+				padding: 0;
+			}*/
+			body {
+				font-family: tahoma, arial, helvetica;
+				font-size: 76%;
+				color: #000;
+				font-weight: normal;
+				padding: 100px;
+			}
+			.layer {
+				background-color: #e3e3e3;
+				border: 2px solid red;
+				width: 300px;
+				height: 100px;
+				display: none;
+				text-align: center;
+				position: relative;
+			}
+			.layer2 {
+				background-color: red;
+				border: 2px solid black;
+				display: none;
+				padding: 20px;
+			}
+			
+			.loader {
+				position: relative;
+				display: none;
+			}
+
+			td {
+				width: 15%;
+			}
+
+			/*   ezLayer styles		*/
+			.ezLayer-upperRight {
+				background: url(upperrightfade.png) right top no-repeat;
+			}
+			.ezLayer-lowerLeft {
+				background: url(lowerleftfade.png) left bottom no-repeat;
+				padding-top: 8px;
+				padding-left: 8px;
+			}
+			.ezLayer-shadow {
+				background: url(shadow.png) bottom right;
+			}
+			.ezLayer-wrapper {
+				position: relative;
+				top: -8px;
+				left: -7px;
+			}
+			
+			.ezLayerShadow {
+				position: relative;
+			}
+			.ezCanvas {
+				position: absolute;
+				z-index: 2;
+				top: 0;
+				left: 0;
+			}
+			.ezLayerWrapper {
+				position: relative;
+				z-index: 3;
+			}
+
+		</style>
+		<!--[if lte IE 6]>
+			<style type="text/css">
+				.ezCanvas {
+					left: -8px;
+				}
+			</style>
+		<![endif]-->
+
+		<script type="text/javascript" src="../mootools-1.2-core-nc.js"></script>
+		<script type="text/javascript" src="../utils.js"></script>
+		<script type="text/javascript">
+			//var layers = new Layers();
+
+			function addContent(){
+				$('layer3').set('html', $('layer3').get('html')+'<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>');
+				//$('layer3').appendText('<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>');
+			}
+		</script>
+	</head>
+	<body>
+
+		<table width="100%">
+			<tr>
+				<td valign="top">
+					<select><option>hello</option></select><br>
+					<a href="#" onclick="layers.show('layer1', {fade: true, position: 'center', shadow: 'drop'})">show center</a>
+					<div id="layer1" class="layer"><a href="#" onclick="layers.hide('layer1')">hide me</a></div>
+					<br>
+					<a href="#" onclick="layers.show('layer2', {fade: true, position: 'center', modal:true})">show modal</a>
+					<div id="layer2" class="layer"><a href="#" onclick="layers.hide('layer2')">hide me</a></div>
+					<br>
+
+				</td>
+				<td valign="top">
+
+					<a href="#" id="button3" onclick="layers.show('layer3', {slide: true, position: 'bottom', control: 'button3'})">slide down</a>
+					<div id="layer3" class="layer2"><a href="#" onclick="layers.hide('layer3')">hide me</a><br><a href="#" onclick="addContent();">add content</a></div>
+					<br>
+					<a href="#" id="button4" onclick="layers.toggle('layer4', {slide: true, shadow: 'glow', position: 'top', control: 'button4'})">slide up *</a>
+					<div id="layer4" class="layer"><a href="#" onclick="layers.hide('layer4')">hide me</a></div>
+					<br>
+
+					<a href="#" id="button5" onclick="layers.show('layer5', {slide: true, position: 'left', control: 'button5', shadow: 'drop'})">slide left</a>
+					<div id="layer5" style="display:none; border: solid 1px black;">
+						<div style="100%">
+							<a href="#" onclick="layers.hide('layer5')">hide me</a>
+						</div>
+					</div>
+					<br>
+					<a href="#" id="button6" onclick="layers.show('layer6', {slide: true, position: 'right', align: 'bottom', control: 'button6'})">slide right, align bottom</a>
+					<div id="layer6" class="layer"><a href="#" onclick="layers.hide('layer6')">hide me</a></div>
+					<br>
+				</td>
+				<td valign="top">
+					<a href="#" id="button7" onclick="layers.toggle('layer7', {slide: true, fade: true, position: 'bottom', control: 'button7'})">slide down with fade</a>
+					<div id="layer7" class="layer2"><a href="#" onclick="layers.hide('layer7')">hide me</a></div>
+					<br>
+					<a href="#" id="button7a" onclick="layers.show('layer7a', {slide: true, fade: true, position: 'bottom', align: 'right', control: 'button7a'})">slide down with fade, align right</a>
+					<div id="layer7a" class="layer"><a href="#" onclick="layers.hide('layer7a')">hide me</a></div>
+					<br>
+					<a href="#" id="button8" onclick="layers.show('layer8', {slide: true, fade: true, position: 'top', control: 'button8', dropshadow: true})">slide up with fade</a>
+					<div id="layer8" class="layer"><a href="#" onclick="layers.hide('layer8')">hide me</a></div>
+					<br>
+
+					<a href="#" id="button9" onclick="layers.show('layer9', {slide: true, fade: true, position: 'left', control: 'button9'})">slide left with fade</a>
+					<div id="layer9" class="layer"><a href="#" onclick="layers.hide('layer9')">hide me</a></div>
+					<br>
+					<a href="#" id="button10" onclick="layers.show('layer10', {slide: true, fade: true, position: 'right', control: 'button10' })">slide right with fade</a>
+					<div id="layer10" class="layer"><a href="#" onclick="layers.hide('layer10')">hide me</a></div>
+					<br>
+				</td>
+				<td valign="top">
+
+					<a href="#" id="button1a" onclick="layers.toggle('layer1a', {fade: true, position:'center', center:'both', container:'centertest'})">show center</a>
+					<div id="layer1a" class="layer"><a href="#" onclick="layers.hide('layer1a')">hide me</a></div>
+					<br>
+					<a href="#" id="button11" onclick="layers.show('layer11', { slide: true, position: 'bottom', horizontal: 'right', control: 'button11'})">diagnal: top left > bottom right</a>
+					<div id="layer11" class="layer"><a href="#" onclick="layers.hide('layer11')">hide me</a></div>
+					<br>
+					<a href="#" id="button12" onclick="layers.show('layer12', {slide: true, position: 'top', horizontal: 'right', control: 'button12'})">diagnal: bottom left > top right</a>
+					<div id="layer12" class="layer"><a href="#" onclick="layers.hide('layer12')">hide me</a></div>
+					<br>
+					<a href="#" id="button20" onclick="layers.show('layer20', { slide: true, position: 'bottom', horizontal: 'left', align: 'right', control: 'button20'})">diagnal: top right > bottom left</a>
+					<div id="layer20" class="layer"><a href="#" onclick="layers.hide('layer20')">hide me</a></div>
+					<br>
+					<a href="#" id="button4a" onclick="layers.toggle('layer4', {slide: true, fade: true, position: 'top', control: 'button4a'})">slide up *</a>
+				</td>
+				<td valign="top">
+					<a href="#" id="button13" onclick="layers.show('layer13', {slide: true, vertical: top,position: [200,200]})">coordinates slide</a>
+					<div id="layer13" class="layer"><a href="#" onclick="layers.hide('layer13')">hide me</a></div>
+					<br>
+					<a href="#" id="button14" onclick="layers.show('layer14', {fade: true,position: [300,200]})">coordinates fade</a>
+					<div id="layer14" class="layer"><a href="#" onclick="layers.hide('layer14')">hide me</a></div>
+					<br>
+					<a href="#" id="button14a" onclick="layers.show('layer14a', {slide: true, vertical: 'down', position: [200,200], transition:Fx.Transitions.Bounce.easeOut})">coordinates bounce</a>
+					<div id="layer14a" class="layer"><a href="#" onclick="layers.hide('layer14a')">hide me</a></div>
+					<br>
+					<a href="#" id="button14b" onclick="layers.show('layer14b', {slide: true, vertical: 'down', align: 'right', control: 'button14b', position: [50,50]})">coordinates offset</a>
+					<div id="layer14b" class="layer"><a href="#" onclick="layers.hide('layer14b')">hide me</a></div>
+					<br>
+				</td>
+				<td valign="top" width="400">
+					<a href="#" id="button15" onclick="layers.show('layer15', {fade:true})">inline fade</a>
+					<div id="layer15" class="layer"><a href="#" onclick="layers.hide('layer15')">hide me</a></div>
+					<br>
+					<a href="#" id="button16" onclick="layers.show('layer16', {slide:true, vertical:'up'})">inline slide</a>
+					<div id="layer16" class="layer"><a href="#" onclick="layers.hide('layer16')">hide me</a></div>
+					<br>
+					<a href="#" id="button17" onclick="layers.show('layer17', {slide:true, fade:true, vertical:'up'})">inline slide & fade</a>
+					<div id="layer17" class="layer"><a href="#" onclick="layers.hide('layer17')">hide me</a></div>
+					<br>
+					<a href="#" id="button18" onclick="layers.show('layer18', {slide:true, fade:true, vertical:'up', horizontal: 'left'})">inline diagnal slide & fade</a>
+					<div id="layer18" class="layer"><a href="#" onclick="layers.hide('layer18')">hide me</a></div>
+					<br>
+					<a href="#" id="button19" onclick="layers.show('layer19', {control:'button19', position: 'bottom'})">slide when slide not set bug</a>
+					<div id="layer19" class="layer"><a href="#" onclick="layers.hide('layer19')">hide me</a></div>
+					<br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div id='centertest' style="width:100px; border: solid 1px black;">i'm the cotents of a div</div>
+					<br><br>
+					<div id='box' style='border: 1px solid red; width: 100px; padding: 10px'>
+						my content goes here...<br/>
+						<a href='#' onclick="layers.show(1, {fade: false, modalTarget:'box'})">do something that will open the loader</a>
+						<select><option>bob</option></select>
+					</div>
+					<input type="button" value="close" onclick="layers.hide(1)" /><input type="button" value="add" onclick="$('box').appendText('hello hello hello ');" />
+					<div class="loader" id="loader"><input type="button" value="close" onclick="layers.hide('loader')" /></div>
+				</td>
+				<td>
+					<a href="javascript:;" onclick="layers.toggle('LayerInLayer1', {fade:true})">layer in layer</a>
+					<div id="LayerInLayer1" class="layer">
+						<a href="javascript:;" onclick="layers.toggle('LayerInLayer2', {fade:true, MoveToBody:false})">layer in layer</a>
+						<div id="LayerInLayer2" class="layer2">
+							asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>
+						</div>
+					</div>
+				</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+
+
+		
+	</body>
+</html>

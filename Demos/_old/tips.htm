@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mando.platform.presentation : Tips</title>
+
+<link rel="stylesheet" href="../_css/main.css" type="text/css" media="all">
+<style type="text/css" media="screen">
+	.tip {
+		border: 1px solid #607293;
+		background-color: #f9f9f9;
+		padding: 10px;
+	}
+	.tip-title {
+		font-weight: bold;
+		color: #607293;
+	}
+</style>
+<script type="text/javascript" src="../_core/mootools-1.2-core-nc.js"></script>
+<script type="text/javascript" src="../interface/tips.js"></script>
+
+<script type="text/javascript">
+	window.addEvent('domready', function(){
+		var myTips = new Tips('#basic .thisisatooltip');
+		
+		var myAdTips = new Tips('#advanced .thisisatooltip');
+		myAdTips.addEvent('show', function(tip){
+			tip.fade('in');
+		});
+		myAdTips.addEvent('hide', function(tip){
+			tip.fade('out');
+		});
+
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+			
+		
+		
+		<h2>Tips</h2>
+		<a class="view" href="http://mootools.net/docs/Plugins/Tips">view docs</a><p class="version">version 1.0</p>
+		<p class="description">Display a tip on any element with a title and/or href.</p>
+		
+		
+		
+		<h3>basic example</h3>
+		<div id="basic">
+			<a href="http://www.phatfusion.net" title="phatfusion homepage" class="thisisatooltip">example link</a>
+		</div>
+
+		<h3>advanced example</h3>
+		<div id="advanced">
+			<a href="http://www.phatfusion.net" title="phatfusion homepage" class="thisisatooltip">example link</a>
+		</div>
+
+		
+		<div id="footer">
+			
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>
