@@ -17,6 +17,12 @@ requires:
 
 provides: [DatePicker]
 
+example:
+	
+	
+demo:
+	
+	
 ...
 */
 
