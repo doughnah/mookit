@@ -57,7 +57,7 @@ var Xapper = new Class({
 			var id = this.id = options.id || this.instance;
 			var container = document.id(options.container);
 	
-			Silverlight.CallBacks[this.instance] = {};
+			Xapper.CallBacks[this.instance] = {};
 	
 			var params = options.params, vars = options.vars, callBacks = options.callBacks;
 			var properties = $merge({height: options.height, width: options.width}, options.properties);
