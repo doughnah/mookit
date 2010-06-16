@@ -73,7 +73,7 @@ var Xapper = new Class({
 				vars[callBack] = 'Xapper.CallBacks.' + this.instance + '.' + callBack;
 			}
 	
-			params.initParams = Object.toQueryString(vars);
+			params.initParams = $H(vars).toQueryString();
 			params.minRuntimeVersion = options.version+'.0';
 			properties.type = 'application/x-silverlight-2';
 			properties.data = 'data:application/x-silverlight-2,';
