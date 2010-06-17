@@ -105,7 +105,7 @@ var Xappa = new Class({
 		}
 	},
 	
-	content: $(this.id).content[this.options.remote]
+	remote: $(this.id).content[this.options.remote]
 
 });
 
