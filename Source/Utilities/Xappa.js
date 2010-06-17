@@ -38,11 +38,8 @@ var Xappa = new Class({
 		},
 		callBacks: {},
 		initParams: {},
-		enableHistory: false
-	},
-
-	toElement: function(){
-		return this.object;
+		enableHistory: false,
+		remote: null
 	},
 
 	initialize: function(path, options){
@@ -54,12 +51,12 @@ var Xappa = new Class({
 	
 			
 			options = this.options;
-			var id = this.id = options.id || this.instance;
+			this.id = options.id || this.instance;
 			var container = document.id(options.container);
 	
 			Xappa.CallBacks[this.instance] = {};
 	
-			var params = options.params, vars = options.vars, callBacks = options.callBacks;
+			var params = options.params, callBacks = options.callBacks;
 			var properties = $merge({height: options.height, width: options.width}, options.properties);
 	
 			var self = this;
@@ -83,7 +80,7 @@ var Xappa = new Class({
 			params.source = path;
 			
 			
-			var obj = new Element('object', $merge(properties, {id: id}));
+			var obj = new Element('object', $merge(properties, {id: this.id}));
 			
 			for (var param in params){
 				new Element('param', {name: param, value: params[param]}).inject(obj);
@@ -106,7 +103,9 @@ var Xappa = new Class({
 				}
 			}
 		}
-	}
+	},
+	
+	content: $(this.id).content[this.options.remote]
 
 });
 
