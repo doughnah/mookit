@@ -49,8 +49,7 @@ var Xappa = new Class({
 		if(Browser.Plugins.Silverlight.version >= this.options.version){
 		
 			this.instance = 'Silverlight_' + Date.now();
-	
-			
+
 			options = this.options;
 			this.id = options.id || this.instance;
 			var container = document.id(options.container);
@@ -107,10 +106,9 @@ var Xappa = new Class({
 	},
 	
 	remote: function(){
-		return $(this.id).content[this.options.remote]
+		return $(this.id).content[this.options.remote];
 	}
 
 });
 
 Xappa.CallBacks = {};
-
