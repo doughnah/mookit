@@ -25,12 +25,13 @@ var Xappa = new Class({
 	options: {
 		id: null,
 		version: 4,
+		minorVersion: '.0',
 		height: 1,
 		width: 1,
 		container: null,
 		properties: {},
 		params: {
-			isWindowless: true,
+			windowless: true,
 			autoUpgrade: true,
 			background: 'white',
 			framerate: 24,
@@ -48,8 +49,7 @@ var Xappa = new Class({
 		if(Browser.Plugins.Silverlight.version >= this.options.version){
 		
 			this.instance = 'Silverlight_' + Date.now();
-	
-			
+
 			options = this.options;
 			this.id = options.id || this.instance;
 			var container = document.id(options.container);
@@ -72,9 +72,9 @@ var Xappa = new Class({
 			
 			var initParams = $H(options.initParams);
 			if(initParams.getLength() > 0){
-				params.initParams = initParams.toQueryString();
+				params.initParams = unescape(initParams.toQueryString());
 			}
-			params.minRuntimeVersion = options.version+'.0';
+			params.minRuntimeVersion = options.version+options.minorVersion;
 			properties.type = 'application/x-silverlight-2';
 			properties.data = 'data:application/x-silverlight-2,';
 			params.source = path;
@@ -105,9 +105,10 @@ var Xappa = new Class({
 		}
 	},
 	
-	remote: $(this.id).content[this.options.remote]
+	remote: function(){
+		return $(this.id).content[this.options.remote];
+	}
 
 });
 
 Xappa.CallBacks = {};
-
