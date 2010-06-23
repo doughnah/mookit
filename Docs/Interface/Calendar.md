@@ -55,7 +55,7 @@ Calendar Method: constructor {#Calendar:constructor}
 
 ### Demos:
 
-- *Calendar* - <http://labs.mandogroup.com/projects/mookit/calendar.htm>
+
 
 
 Calendar Method: toggle {#Calendar:toggle}
