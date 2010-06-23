@@ -1,0 +1,208 @@
+﻿
+			
+			.calendarContainer * {
+				margin: 0;
+				padding: 0;
+				font-family: tahoma;
+			}
+			
+			.calendarContainer {
+				position: relative;
+				width: 162px;
+				height: 170px;
+				overflow: hidden;
+				/*border: 1px solid red;*/
+				background: #dcdfe1;
+			}
+			
+			.calendarHeader
+			 {
+			 height: 22px;
+			 position: absolute;
+			 z-index: 5;
+			 color: #484a54;
+			 background: #dcdfe1 url(img/name-bg.gif) repeat-x 0 0;
+			 }
+			.calendarHeader span.left
+			 {
+			 display: block;
+			 background: url(img/arrow-left.gif) no-repeat 0 0;
+			 width: 22px;
+			 height: 22px;
+			 float: left;
+			 cursor: pointer;
+			 }
+			.calendarHeader span.right
+			 {
+			 display: block;
+			 background: url(img/arrow-right.gif) no-repeat 0 0;
+			 width: 22px;
+			 height: 22px;
+			 float: right;
+			 cursor: pointer;
+			 }
+			.calendarHeader span.title
+			 {
+			 display: block;
+			 width: 118px;
+			 font-size: 13px;
+			 font-weight: bold;
+			 text-align: center;
+			 float: left;
+			 padding-top: 3px;
+			 cursor: pointer;
+			 }
+			
+			.calendar {
+				width: 162px;
+				height: 170px;
+			}
+			.calendar table
+			 {
+			 background: #d7dcdf;
+			 }
+			
+			
+			.calendar table.date th 
+			 {
+			 width: 20px;
+			 height: 20px;
+			 background: #dcdfe2 url(img/header-bg.gif) repeat-x 0 0;
+			 font-size: 8px;
+			 font-weight: normal;
+			 }
+			.calendar table.date td
+			 {
+			 width: 22px;
+			 height: 20px;
+			 text-align: center;
+			 font-size: 10px;
+			 border-top: white solid 1px;
+			 }
+			
+			.calendar table.date td:hover
+			 {
+			 cursor: pointer;
+			 font-weight: bold;
+			 background: url(img/date-bg.gif) no-repeat 0 -23px;
+			 border-top: none;
+			 }
+			.calendar table.date td.today
+			 {
+			 font-weight: bold;
+			 }
+			.calendar table.date td.selected
+			 {
+			 color: white;
+			 font-weight: bold;
+			 background: url(img/date-bg.gif) no-repeat 0 -46px;
+			 border-top: none;
+			 }
+			.calendar table.date td.blocked
+			 {
+			 color: #b80808;
+			 cursor: not-allowed;
+			 }
+			.calendar table.date td.blocked:hover
+			 {
+			 background-image: none;
+			 border-top: white solid 1px;
+			 font-weight: normal;
+			 }
+			
+			.calendar table.date td.past, .calendar table.date td.future 
+			 {
+			 color: #c3c5c7;
+			 }
+			.calendar table.date td.past:hover, .calendar table.date td.future:hover 
+			 {
+			 color: #000;
+			 }
+			.calendar table.date td[class="past selected"]:hover, .calendar table.date td[class="future selected"]:hover 
+			 {
+			 color: white;
+			 }
+			.calendar table.date td[class="past blocked"]:hover, .calendar table.date td[class="future blocked"]:hover 
+			 {
+			 color: #b80808;
+			 }
+			
+			
+			.calendar table.month td
+			 {
+			 width: 39px;
+			 height: 48px;
+			 text-align: center;
+			 font-size: 11px;
+			 border-top: white solid 1px;
+			 }
+			.calendar table.month td:hover
+			 {
+			 cursor: pointer;
+			 font-weight: bold;
+			 background: #b80808 url(img/month-bg.gif) no-repeat 0 -53px;
+			 border-top: none;
+			 }
+			.calendar table.month td.selected
+			 {
+			 font-weight: bold;
+			 background: #b80808 url(img/month-bg.gif) no-repeat 0 -106px;
+			 border-top: none;
+			 }
+			
+			
+			.calendarIcon {
+				width: 14px;
+				height: 14px;
+				padding-left: 14px;
+				margin-left: 10px;
+				background: url(img/calendaricon.gif) no-repeat;
+				cursor: pointer;
+			}
+			
+			.row1 td
+			 {
+			 background: #f0f0f2;
+			 }
+			.row2 td
+			 {
+			 background: #edeef0;
+			 }
+			.row3 td
+			 {
+			 background: #ebedee;
+			 }
+			.row4 td
+			 {
+			 background: #e8eaeb;
+			 }
+			.row5 td
+			 {
+			 background: #e6e7e9;
+			 }
+			.row6 td
+			 {
+			 background: #e3e5e7;
+			 }
+			
+			
+			/*   ezLayer styles		*/
+			.ezLayer-upperRight {
+				background: url(upperrightfade.png) right top no-repeat;
+				position: relative;
+			}
+			.ezLayer-lowerLeft {
+				background: url(lowerleftfade.png) left bottom no-repeat;
+				padding-top: 8px;
+				padding-left: 8px;
+				position: relative;
+			}
+			.ezLayer-shadow {
+				background: url(shadow.png) bottom right;
+				position: relative;
+			}
+			.ezLayer-wrapper {
+				position: relative;
+				top: -8px;
+				left: -7px;
+			}
