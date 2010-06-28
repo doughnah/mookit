@@ -102,14 +102,16 @@ var Xappa = new Class({
 			params.source = path;
 			
 			
-			var obj = new Element('object', $merge(properties, {id: this.id}));
-			
-			for (var param in params){
-				new Element('param', {name: param, value: params[param]}).inject(obj);
+			var build = '<object id="' + this.id + '"';
+			for (var property in properties) build += ' ' + property + '=' + properties[property] + '"';
+			build += '>';
+			for (var param in params) {
+				if (params[param]) build += '<param name=' + param + '" value=' + params[param] + '" />';
 			}
+			build += '</object>';
 			
 			this.object = (container) ? container.empty() : new Element('div').inject(document.body);
-			obj.inject(this.object);
+			this.object.set('html', build);
 			
 			if(options.enableHistory){
 				if(!document.id('_sl_historyFrame')){
