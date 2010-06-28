@@ -70,7 +70,7 @@ var Xappa = new Class({
 		
 		if(Browser.Plugins.Silverlight.version >= this.options.version){
 		
-			this.instance = 'Silverlight_' + Date.now();
+			this.instance = 'Silverlight_' + $time();
 
 			options = this.options;
 			this.id = options.id || this.instance;
