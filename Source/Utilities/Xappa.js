@@ -103,10 +103,10 @@ var Xappa = new Class({
 			
 			
 			var build = '<object id="' + this.id + '"';
-			for (var property in properties) build += ' ' + property + '=' + properties[property] + '"';
+			for (var property in properties) build += ' ' + property + '="' + properties[property] + '"';
 			build += '>';
 			for (var param in params) {
-				if (params[param]) build += '<param name=' + param + '" value=' + params[param] + '" />';
+				if (params[param]) build += '<param name="' + param + '" value="' + params[param] + '" />';
 			}
 			build += '</object>';
 			
