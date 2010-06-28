@@ -39,6 +39,25 @@ The *Xappa* class embeds Silverlight into the page as the Swiff class does. It a
 * (*object*) A new *Xappa* instance.
 
 
+### Examples:
+
+	new Xappa('mySilverlightFile.xap', {
+		container: 'myXapContainer',
+		version: 4,
+		minorVersion: '.0.54'
+		width: 550,
+		height: 550,
+		initParams: {
+			myVar: 'hello'
+		}
+	});
+
+
+### Demos:
+
+- *Xappa* - <http://labs.mandogroup.com/projects/mookit/utilities/Xappa.htm>
+
+
 
 Xappa Method: remote {#Xappa:remote}
 -------------------------------------
