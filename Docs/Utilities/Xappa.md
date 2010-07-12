@@ -55,7 +55,7 @@ The *Xappa* class embeds Silverlight into the page as the Swiff class does. It a
 
 ### Demos:
 
-- *Xappa* - <http://labs.mandogroup.com/projects/mookit/utilities/Xappa.htm>
+- *Xappa* - <http://labs.mandogroup.com/projects/mookit/Utilities/Xappa.php>
 
 
 

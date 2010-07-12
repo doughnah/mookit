@@ -40,7 +40,7 @@ The *PagePreLoader* class hides the page content until its ready to show. It als
 
 ### Demos:
 
-- *PagePreLoader* - <http://labs.mandogroup.com/projects/mookit/utilities/PagePreLoader.htm>
+- *PagePreLoader* - <http://labs.mandogroup.com/projects/mookit/Utilities/PagePreLoader.php>
 
 
 
