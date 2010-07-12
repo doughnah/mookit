@@ -1,0 +1,34 @@
+{
+	items: [
+		{
+			title: 'Mustard Field',
+			desc: 'Dakshinkali, Kathmandu Valley',
+			image: 'files/IMG_1.jpg'
+		},
+		{
+			title: 'Glacial Melt-water',
+			desc: 'Annapurna Region',
+			image: 'files/IMG_2.jpg'
+		},
+		{
+			title: 'Bridge over Black Dragon Lake',
+			desc: 'Lijiang, Yunnan Province',
+			image: 'files/IMG_3.jpg'
+		},
+		{
+			title: 'Long Lake',
+			desc: 'Jiuzhaigou, Sichuan Province',
+			image: 'files/IMG_4.jpg'
+		},
+		{
+			title: 'Purples on Green 1',
+			desc: '',
+			image: 'files/IMG_5.jpg'
+		},
+		{
+			title: 'Droplets on Green Leaves 3',
+			desc: '',
+			image: 'files/IMG_6.jpg'
+		}
+	]
+}
