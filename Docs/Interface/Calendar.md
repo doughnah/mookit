@@ -68,7 +68,7 @@ Calendar Method: toggle {#Calendar:toggle}
 
 ### Arguments:
 
-1. date - (*string*)
+1. date - (*string*, optional)
 
 ### Returns:
 
@@ -90,7 +90,7 @@ Calendar Method: show {#Calendar:show}
 
 ### Arguments:
 
-1. date - (*string*)
+1. date - (*string*, optional)
 
 ### Returns:
 
