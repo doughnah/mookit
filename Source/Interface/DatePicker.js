@@ -31,7 +31,7 @@ var DatePicker = new Class({
 	Extends: Calendar,
 	
 	options: {
-		'zindex': 1000,
+		zIndex: 1000,
 		hideInput: false
 		//onBlur: $empty
 	},
@@ -59,7 +59,7 @@ var DatePicker = new Class({
             
             this.container.setStyles({
             	'display': 'none',
-            	'z-index': this.options.zindex,
+            	'z-index': this.options.zIndex,
             	'position': 'absolute',
             	'top': coords.top+coords.height,
             	'left': coords.left
