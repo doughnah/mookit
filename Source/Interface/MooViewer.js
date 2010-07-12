@@ -32,7 +32,7 @@ var MooViewer = new Class({
 		nav: true,
 		buttons: true,
 		fadeText: true,
-		transition: 'sine:out',
+		transition: 'sine:out', //fade
 		duration: .25,
 		wait: 3,
 		backFade: false,
@@ -49,6 +49,10 @@ var MooViewer = new Class({
 		this.items = this.viewer.getElements('li');
 		this.descriptions = this.viewer.getElements('div.desc').dispose();
 		this.titles = this.viewer.getElements('h2').dispose();
+		
+		if(this.options.index){
+			this.items[0].destroy();
+		}
 		
 		this.body = new Element('div', {'class':'body'}).wraps(this.itemsContainer);
 		
@@ -159,6 +163,19 @@ var MooViewer = new Class({
 			
 			if(index < 0){
 				index = this.items.length-1;
+			}
+			
+			this.goToItem(index);
+		}
+	},
+	
+	goTo: function(index){
+		if(!this.fading){
+			if(index >= this.items.length){
+				index = this.items.length-1;
+			}
+			if(index < 0){
+				index = 0;
 			}
 			
 			this.goToItem(index);
