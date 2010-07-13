@@ -20,7 +20,7 @@ provides: [PagePreLoader]
 */
 var PagePreLoader = new Class({
 	
-	Implements: Options,
+	Implements: [Options, Events],
 	
 	options: {
 		/* onComplete: $empty(), */
