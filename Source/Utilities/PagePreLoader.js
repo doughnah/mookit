@@ -23,6 +23,7 @@ var PagePreLoader = new Class({
 	Implements: Options,
 	
 	options: {
+		/* onComplete: $empty(), */
 		css: '/_common/css/loading.css',
 		delay: 0,
 		fade: false,
@@ -82,6 +83,8 @@ var PagePreLoader = new Class({
 		if(this.options.fade && !Browser.Engine.trident){
 			$(document.body).fade('in');
 		}
+		
+		this.fireEvent('complete');
 		
 		$(document.body).focus();
 	},
